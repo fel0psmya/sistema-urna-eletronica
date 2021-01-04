@@ -5,6 +5,9 @@
  */
 package telas;
 
+import java.awt.Color;
+import javax.swing.JFrame;
+
 /**
  *
  * @author felip
@@ -27,7 +30,20 @@ public class TelaInicial extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        pV = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        pC = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        pCargo = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        pEleitor = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
         menu = new javax.swing.JMenuBar();
+        menuSair = new javax.swing.JMenu();
         menuV = new javax.swing.JMenu();
         itemNV = new javax.swing.JMenuItem();
         menuC = new javax.swing.JMenu();
@@ -37,10 +53,226 @@ public class TelaInicial extends javax.swing.JFrame {
         itemE = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(720, 480));
+
+        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
+
+        pV.setBackground(new java.awt.Color(0, 0, 0));
+        pV.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                pVMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                pVMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                pVMouseExited(evt);
+            }
+        });
+
+        jLabel1.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Nova votação");
+
+        javax.swing.GroupLayout pVLayout = new javax.swing.GroupLayout(pV);
+        pV.setLayout(pVLayout);
+        pVLayout.setHorizontalGroup(
+            pVLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pVLayout.createSequentialGroup()
+                .addGap(85, 85, 85)
+                .addComponent(jLabel1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        pVLayout.setVerticalGroup(
+            pVLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pVLayout.createSequentialGroup()
+                .addContainerGap(39, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30))
+        );
+
+        pC.setBackground(new java.awt.Color(0, 0, 0));
+        pC.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                pCMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                pCMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                pCMouseExited(evt);
+            }
+        });
+
+        jLabel3.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("Novo candidato");
+
+        javax.swing.GroupLayout pCLayout = new javax.swing.GroupLayout(pC);
+        pC.setLayout(pCLayout);
+        pCLayout.setHorizontalGroup(
+            pCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pCLayout.createSequentialGroup()
+                .addGap(72, 72, 72)
+                .addComponent(jLabel3)
+                .addContainerGap(79, Short.MAX_VALUE))
+        );
+        pCLayout.setVerticalGroup(
+            pCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pCLayout.createSequentialGroup()
+                .addContainerGap(28, Short.MAX_VALUE)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26))
+        );
+
+        pCargo.setBackground(new java.awt.Color(0, 0, 0));
+        pCargo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                pCargoMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                pCargoMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                pCargoMouseExited(evt);
+            }
+        });
+
+        jLabel2.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Novo cargo");
+
+        javax.swing.GroupLayout pCargoLayout = new javax.swing.GroupLayout(pCargo);
+        pCargo.setLayout(pCargoLayout);
+        pCargoLayout.setHorizontalGroup(
+            pCargoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pCargoLayout.createSequentialGroup()
+                .addGap(94, 94, 94)
+                .addComponent(jLabel2)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        pCargoLayout.setVerticalGroup(
+            pCargoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pCargoLayout.createSequentialGroup()
+                .addContainerGap(26, Short.MAX_VALUE)
+                .addComponent(jLabel2)
+                .addGap(21, 21, 21))
+        );
+
+        pEleitor.setBackground(new java.awt.Color(0, 0, 0));
+        pEleitor.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                pEleitorMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                pEleitorMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                pEleitorMouseExited(evt);
+            }
+        });
+
+        jLabel4.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("Novo eleitor");
+
+        javax.swing.GroupLayout pEleitorLayout = new javax.swing.GroupLayout(pEleitor);
+        pEleitor.setLayout(pEleitorLayout);
+        pEleitorLayout.setHorizontalGroup(
+            pEleitorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pEleitorLayout.createSequentialGroup()
+                .addGap(90, 90, 90)
+                .addComponent(jLabel4)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        pEleitorLayout.setVerticalGroup(
+            pEleitorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pEleitorLayout.createSequentialGroup()
+                .addContainerGap(32, Short.MAX_VALUE)
+                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(22, 22, 22))
+        );
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(pV, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(pC, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(pCargo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(pEleitor, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(83, Short.MAX_VALUE)
+                .addComponent(pV, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(pC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(pCargo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(pEleitor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(39, 39, 39))
+        );
+
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setForeground(new java.awt.Color(255, 255, 255));
+
+        jLabel5.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
+        jLabel5.setText("Sistema de Votação");
+
+        jLabel6.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jLabel6.setText("Made by: Felipe Maia");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(236, Short.MAX_VALUE)
+                .addComponent(jLabel6)
+                .addContainerGap())
+            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel2Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jLabel5)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel6)
+                .addContainerGap())
+            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel2Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jLabel5)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+
+        menuSair.setText("Sair");
+        menuSair.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                menuSairMouseClicked(evt);
+            }
+        });
+        menuSair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuSairActionPerformed(evt);
+            }
+        });
+        menu.add(menuSair);
 
         menuV.setText("Novo");
 
         itemNV.setText("Nova votação");
+        itemNV.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                itemNVMouseClicked(evt);
+            }
+        });
         itemNV.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 itemNVActionPerformed(evt);
@@ -61,6 +293,11 @@ public class TelaInicial extends javax.swing.JFrame {
         menuC.add(itemCand);
 
         itemCarg.setText("Novo cargo");
+        itemCarg.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itemCargActionPerformed(evt);
+            }
+        });
         menuC.add(itemCarg);
 
         menu.add(menuC);
@@ -83,27 +320,103 @@ public class TelaInicial extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 663, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 439, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void itemCandActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemCandActionPerformed
-        // TODO add your handling code here:
+        new TelaCandidato().show();
     }//GEN-LAST:event_itemCandActionPerformed
 
     private void itemEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemEActionPerformed
-        // TODO add your handling code here:
+        new TelaEleitor().show();
     }//GEN-LAST:event_itemEActionPerformed
 
     private void itemNVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemNVActionPerformed
-        // TODO add your handling code here:
+        new TelaVotacao().show();
     }//GEN-LAST:event_itemNVActionPerformed
+
+    private void pVMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pVMouseEntered
+        pV.setBackground(Color.white);
+        jLabel1.setForeground(Color.black);
+    }//GEN-LAST:event_pVMouseEntered
+
+    private void pCMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pCMouseEntered
+        pC.setBackground(Color.white);
+        jLabel3.setForeground(Color.black);
+    }//GEN-LAST:event_pCMouseEntered
+
+    private void pCargoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pCargoMouseEntered
+        pCargo.setBackground(Color.white);
+        jLabel2.setForeground(Color.black);
+    }//GEN-LAST:event_pCargoMouseEntered
+
+    private void pEleitorMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pEleitorMouseEntered
+        pEleitor.setBackground(Color.white);
+        jLabel4.setForeground(Color.black);
+    }//GEN-LAST:event_pEleitorMouseEntered
+
+    private void pVMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pVMouseExited
+        pV.setBackground(Color.black);
+        jLabel1.setForeground(Color.white);
+    }//GEN-LAST:event_pVMouseExited
+
+    private void pCMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pCMouseExited
+        pC.setBackground(Color.black);
+        jLabel3.setForeground(Color.white);
+    }//GEN-LAST:event_pCMouseExited
+
+    private void pCargoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pCargoMouseExited
+        pCargo.setBackground(Color.black);
+        jLabel2.setForeground(Color.white);
+    }//GEN-LAST:event_pCargoMouseExited
+
+    private void pEleitorMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pEleitorMouseExited
+        pEleitor.setBackground(Color.black);
+        jLabel4.setForeground(Color.white);
+    }//GEN-LAST:event_pEleitorMouseExited
+
+    private void pVMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pVMouseClicked
+        new TelaVotacao().show();
+    }//GEN-LAST:event_pVMouseClicked
+
+    private void itemNVMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_itemNVMouseClicked
+        // NADA
+    }//GEN-LAST:event_itemNVMouseClicked
+
+    private void pCMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pCMouseClicked
+        new TelaCandidato().show();
+    }//GEN-LAST:event_pCMouseClicked
+
+    private void itemCargActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemCargActionPerformed
+        new TelaCargo().show();
+    }//GEN-LAST:event_itemCargActionPerformed
+
+    private void pCargoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pCargoMouseClicked
+        new TelaCargo().show();
+    }//GEN-LAST:event_pCargoMouseClicked
+
+    private void pEleitorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pEleitorMouseClicked
+        new TelaEleitor().show();
+    }//GEN-LAST:event_pEleitorMouseClicked
+
+    private void menuSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuSairActionPerformed
+       
+    }//GEN-LAST:event_menuSairActionPerformed
+
+    private void menuSairMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuSairMouseClicked
+        dispose();
+    }//GEN-LAST:event_menuSairMouseClicked
 
     /**
      * @param args the command line arguments
@@ -145,9 +458,27 @@ public class TelaInicial extends javax.swing.JFrame {
     private javax.swing.JMenuItem itemCarg;
     private javax.swing.JMenuItem itemE;
     private javax.swing.JMenuItem itemNV;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JMenuBar menu;
     private javax.swing.JMenu menuC;
     private javax.swing.JMenu menuE;
+    private javax.swing.JMenu menuSair;
     private javax.swing.JMenu menuV;
+    private javax.swing.JPanel pC;
+    private javax.swing.JPanel pCargo;
+    private javax.swing.JPanel pCargo1;
+    private javax.swing.JPanel pCargo2;
+    private javax.swing.JPanel pCargo3;
+    private javax.swing.JPanel pCargo4;
+    private javax.swing.JPanel pEleitor;
+    private javax.swing.JPanel pV;
     // End of variables declaration//GEN-END:variables
 }
