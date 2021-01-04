@@ -30,6 +30,9 @@ public class TelaInicial extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel2 = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         pV = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -39,11 +42,7 @@ public class TelaInicial extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         pEleitor = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
         menu = new javax.swing.JMenuBar();
-        menuSair = new javax.swing.JMenu();
         menuV = new javax.swing.JMenu();
         itemNV = new javax.swing.JMenuItem();
         menuC = new javax.swing.JMenu();
@@ -52,8 +51,44 @@ public class TelaInicial extends javax.swing.JFrame {
         menuE = new javax.swing.JMenu();
         itemE = new javax.swing.JMenuItem();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(720, 480));
+
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setForeground(new java.awt.Color(255, 255, 255));
+
+        jLabel5.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
+        jLabel5.setText("Sistema de Votação");
+
+        jLabel6.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jLabel6.setText("Made by: Felipe Maia");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap(236, Short.MAX_VALUE)
+                .addComponent(jLabel6)
+                .addContainerGap())
+            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel2Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jLabel5)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel6)
+                .addContainerGap())
+            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel2Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jLabel5)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 0));
 
@@ -115,7 +150,7 @@ public class TelaInicial extends javax.swing.JFrame {
             .addGroup(pCLayout.createSequentialGroup()
                 .addGap(72, 72, 72)
                 .addComponent(jLabel3)
-                .addContainerGap(79, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pCLayout.setVerticalGroup(
             pCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -149,7 +184,7 @@ public class TelaInicial extends javax.swing.JFrame {
             .addGroup(pCargoLayout.createSequentialGroup()
                 .addGap(94, 94, 94)
                 .addComponent(jLabel2)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(114, Short.MAX_VALUE))
         );
         pCargoLayout.setVerticalGroup(
             pCargoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -205,7 +240,7 @@ public class TelaInicial extends javax.swing.JFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(83, Short.MAX_VALUE)
+                .addContainerGap(77, Short.MAX_VALUE)
                 .addComponent(pV, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(pC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -215,55 +250,6 @@ public class TelaInicial extends javax.swing.JFrame {
                 .addComponent(pEleitor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(39, 39, 39))
         );
-
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel2.setForeground(new java.awt.Color(255, 255, 255));
-
-        jLabel5.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
-        jLabel5.setText("Sistema de Votação");
-
-        jLabel6.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        jLabel6.setText("Made by: Felipe Maia");
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(236, Short.MAX_VALUE)
-                .addComponent(jLabel6)
-                .addContainerGap())
-            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel2Layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jLabel5)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel6)
-                .addContainerGap())
-            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel2Layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jLabel5)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
-
-        menuSair.setText("Sair");
-        menuSair.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                menuSairMouseClicked(evt);
-            }
-        });
-        menuSair.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menuSairActionPerformed(evt);
-            }
-        });
-        menu.add(menuSair);
 
         menuV.setText("Novo");
 
@@ -410,14 +396,6 @@ public class TelaInicial extends javax.swing.JFrame {
         new TelaEleitor().show();
     }//GEN-LAST:event_pEleitorMouseClicked
 
-    private void menuSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuSairActionPerformed
-       
-    }//GEN-LAST:event_menuSairActionPerformed
-
-    private void menuSairMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuSairMouseClicked
-        dispose();
-    }//GEN-LAST:event_menuSairMouseClicked
-
     /**
      * @param args the command line arguments
      */
@@ -470,7 +448,6 @@ public class TelaInicial extends javax.swing.JFrame {
     private javax.swing.JMenuBar menu;
     private javax.swing.JMenu menuC;
     private javax.swing.JMenu menuE;
-    private javax.swing.JMenu menuSair;
     private javax.swing.JMenu menuV;
     private javax.swing.JPanel pC;
     private javax.swing.JPanel pCargo;
