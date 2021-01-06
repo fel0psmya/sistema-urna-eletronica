@@ -3,13 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package view;
+package views;
 
 import java.awt.Image;
 import java.io.File;
+import static java.lang.Integer.parseInt;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
-
+import controller.ContCand;
+import javax.swing.JOptionPane;
 /**
  *
  * @author felip
@@ -38,7 +40,7 @@ public class TelaCandidato extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         pnFoto = new javax.swing.JPanel();
         lblIcone = new javax.swing.JLabel();
-        tfCaminho = new javax.swing.JTextField();
+        txtImg = new javax.swing.JTextField();
         pnBaixo = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -49,9 +51,8 @@ public class TelaCandidato extends javax.swing.JFrame {
         txtNome = new javax.swing.JTextField();
         txtPart = new javax.swing.JTextField();
         txtNum = new javax.swing.JTextField();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        txtCargo = new javax.swing.JList<>();
         btnCad = new javax.swing.JButton();
+        txtCargo = new javax.swing.JComboBox<>();
 
         jList1.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -103,14 +104,14 @@ public class TelaCandidato extends javax.swing.JFrame {
 
         pnCima.add(pnFoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 20, 104, 129));
 
-        tfCaminho.setEditable(false);
-        tfCaminho.setFont(new java.awt.Font("Arial", 0, 8)); // NOI18N
-        tfCaminho.addActionListener(new java.awt.event.ActionListener() {
+        txtImg.setEditable(false);
+        txtImg.setFont(new java.awt.Font("Arial", 0, 8)); // NOI18N
+        txtImg.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tfCaminhoActionPerformed(evt);
+                txtImgActionPerformed(evt);
             }
         });
-        pnCima.add(tfCaminho, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 190, 160, -1));
+        pnCima.add(txtImg, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 190, 160, -1));
 
         getContentPane().add(pnCima, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 450, 230));
 
@@ -135,7 +136,7 @@ public class TelaCandidato extends javax.swing.JFrame {
 
         jLabel6.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         jLabel6.setText("Cargo pretendido");
-        pnBaixo.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, -1, -1));
+        pnBaixo.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, -1, 30));
 
         txtId.setEditable(false);
         txtId.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
@@ -158,18 +159,6 @@ public class TelaCandidato extends javax.swing.JFrame {
         txtNum.setPreferredSize(null);
         pnBaixo.add(txtNum, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 140, 55, -1));
 
-        txtCargo.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        txtCargo.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
-        txtCargo.setToolTipText("");
-        txtCargo.setPreferredSize(null);
-        jScrollPane2.setViewportView(txtCargo);
-
-        pnBaixo.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 180, 110, 120));
-
         btnCad.setBackground(new java.awt.Color(0, 153, 255));
         btnCad.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         btnCad.setForeground(new java.awt.Color(255, 255, 255));
@@ -181,6 +170,10 @@ public class TelaCandidato extends javax.swing.JFrame {
         });
         pnBaixo.add(btnCad, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 320, 110, 30));
 
+        txtCargo.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        txtCargo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        pnBaixo.add(txtCargo, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 180, 110, 30));
+
         getContentPane().add(pnBaixo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 230, 450, 380));
 
         pack();
@@ -191,22 +184,27 @@ public class TelaCandidato extends javax.swing.JFrame {
          file.setFileSelectionMode(JFileChooser.FILES_ONLY);
          int i= file.showSaveDialog(null);
        if (i==1){
-           tfCaminho.setText("");
+           txtImg.setText("");
        } else {
            File arquivo = file.getSelectedFile();
-           tfCaminho.setText(arquivo.getPath());
+           txtImg.setText(arquivo.getPath());
            ImageIcon img;
            img = new ImageIcon(arquivo.getPath());
            lblIcone.setIcon(new ImageIcon(img.getImage().getScaledInstance(lblIcone.getWidth(), lblIcone.getHeight(), Image.SCALE_DEFAULT)));
        }
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void tfCaminhoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfCaminhoActionPerformed
+    private void txtImgActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtImgActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_tfCaminhoActionPerformed
+    }//GEN-LAST:event_txtImgActionPerformed
 
     private void btnCadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadActionPerformed
-        // TODO add your handling code here:
+            ContCand c = new ContCand(Integer.parseInt(txtId.getText()), 
+            txtNome.getText(), txtPart.getText(), txtNum.getText(), 
+            txtImg.getText(), txtCargo.getSelectedItem().toString());
+            // Envia os valores para o controlador
+           
+            JOptionPane.showMessageDialog(null, c.respostaTxt);
     }//GEN-LAST:event_btnCadActionPerformed
 
     /**
@@ -254,14 +252,13 @@ public class TelaCandidato extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JList<String> jList1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel lblIcone;
     private javax.swing.JPanel pnBaixo;
     private javax.swing.JPanel pnCima;
     private javax.swing.JPanel pnFoto;
-    private javax.swing.JTextField tfCaminho;
-    private javax.swing.JList<String> txtCargo;
+    private javax.swing.JComboBox<String> txtCargo;
     private javax.swing.JTextField txtId;
+    private javax.swing.JTextField txtImg;
     private javax.swing.JTextField txtNome;
     private javax.swing.JTextField txtNum;
     private javax.swing.JTextField txtPart;

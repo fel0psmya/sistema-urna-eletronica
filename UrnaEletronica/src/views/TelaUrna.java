@@ -3,7 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package view;
+package views;
+
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -35,37 +39,34 @@ public class TelaUrna extends javax.swing.JFrame {
         jLabel30 = new javax.swing.JLabel();
         pnlDigitos = new javax.swing.JPanel();
         pn1 = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
+        pnl1 = new javax.swing.JLabel();
         pn2 = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
+        pnl2 = new javax.swing.JLabel();
         pn3 = new javax.swing.JPanel();
-        jLabel17 = new javax.swing.JLabel();
+        pnl3 = new javax.swing.JLabel();
         pn4 = new javax.swing.JPanel();
-        jLabel18 = new javax.swing.JLabel();
+        pnl4 = new javax.swing.JLabel();
         pn5 = new javax.swing.JPanel();
-        jLabel19 = new javax.swing.JLabel();
+        pnl5 = new javax.swing.JLabel();
         pn6 = new javax.swing.JPanel();
-        jLabel20 = new javax.swing.JLabel();
+        pnl6 = new javax.swing.JLabel();
         pn7 = new javax.swing.JPanel();
-        jLabel21 = new javax.swing.JLabel();
+        pnl7 = new javax.swing.JLabel();
         pn8 = new javax.swing.JPanel();
-        jLabel22 = new javax.swing.JLabel();
+        pnl8 = new javax.swing.JLabel();
         pn9 = new javax.swing.JPanel();
-        jLabel23 = new javax.swing.JLabel();
+        pnl9 = new javax.swing.JLabel();
         pn0 = new javax.swing.JPanel();
-        jLabel24 = new javax.swing.JLabel();
+        pnl0 = new javax.swing.JLabel();
         pnBranco = new javax.swing.JPanel();
-        jLabel25 = new javax.swing.JLabel();
+        pnlBranco = new javax.swing.JLabel();
         pnCorrige = new javax.swing.JPanel();
-        jLabel26 = new javax.swing.JLabel();
+        pnlCorrige = new javax.swing.JLabel();
         pnConfirma = new javax.swing.JPanel();
-        jLabel27 = new javax.swing.JLabel();
+        pnlConfirma = new javax.swing.JLabel();
         pnTela = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         lblCargo = new javax.swing.JLabel();
-        lblNum2 = new javax.swing.JLabel();
-        lblNum1 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
         lblNome = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         lblPartido = new javax.swing.JLabel();
@@ -79,6 +80,10 @@ public class TelaUrna extends javax.swing.JFrame {
         lblIcone = new javax.swing.JLabel();
         lblId = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        lblNum1 = new javax.swing.JLabel();
+        lblNum2 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
 
@@ -98,7 +103,6 @@ public class TelaUrna extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Urna Eletrônica");
         setMinimumSize(new java.awt.Dimension(1040, 560));
-        setPreferredSize(new java.awt.Dimension(1110, 580));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -151,328 +155,377 @@ public class TelaUrna extends javax.swing.JFrame {
         pn1.setBackground(new java.awt.Color(45, 45, 45));
         pn1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         pn1.setPreferredSize(new java.awt.Dimension(60, 53));
+        pn1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                pn1MouseClicked(evt);
+            }
+        });
 
-        jLabel3.setFont(new java.awt.Font("Arial", 1, 26)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("1");
-        jLabel3.setToolTipText("");
+        pnl1.setFont(new java.awt.Font("Arial", 1, 26)); // NOI18N
+        pnl1.setForeground(new java.awt.Color(255, 255, 255));
+        pnl1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        pnl1.setText("1");
+        pnl1.setToolTipText("");
+        pnl1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                pnl1MouseClicked(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                pnl1MouseExited(evt);
+            }
+        });
 
         javax.swing.GroupLayout pn1Layout = new javax.swing.GroupLayout(pn1);
         pn1.setLayout(pn1Layout);
         pn1Layout.setHorizontalGroup(
             pn1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pn1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(pnl1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 54, Short.MAX_VALUE)
         );
         pn1Layout.setVerticalGroup(
             pn1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pn1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(pnl1, javax.swing.GroupLayout.DEFAULT_SIZE, 47, Short.MAX_VALUE)
         );
 
         pn2.setBackground(new java.awt.Color(45, 45, 45));
         pn2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         pn2.setPreferredSize(new java.awt.Dimension(60, 53));
 
-        jLabel4.setFont(new java.awt.Font("Arial", 1, 26)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("2");
-        jLabel4.setToolTipText("");
+        pnl2.setFont(new java.awt.Font("Arial", 1, 26)); // NOI18N
+        pnl2.setForeground(new java.awt.Color(255, 255, 255));
+        pnl2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        pnl2.setText("2");
+        pnl2.setToolTipText("");
+        pnl2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                pnl2MouseClicked(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                pnl2MouseReleased(evt);
+            }
+        });
 
         javax.swing.GroupLayout pn2Layout = new javax.swing.GroupLayout(pn2);
         pn2.setLayout(pn2Layout);
         pn2Layout.setHorizontalGroup(
             pn2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pn2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(pnl2, javax.swing.GroupLayout.DEFAULT_SIZE, 54, Short.MAX_VALUE)
         );
         pn2Layout.setVerticalGroup(
             pn2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pn2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(pnl2, javax.swing.GroupLayout.DEFAULT_SIZE, 47, Short.MAX_VALUE)
         );
 
         pn3.setBackground(new java.awt.Color(45, 45, 45));
         pn3.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         pn3.setPreferredSize(new java.awt.Dimension(60, 53));
 
-        jLabel17.setFont(new java.awt.Font("Arial", 1, 26)); // NOI18N
-        jLabel17.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel17.setText("3");
-        jLabel17.setToolTipText("");
+        pnl3.setFont(new java.awt.Font("Arial", 1, 26)); // NOI18N
+        pnl3.setForeground(new java.awt.Color(255, 255, 255));
+        pnl3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        pnl3.setText("3");
+        pnl3.setToolTipText("");
+        pnl3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                pnl3MouseClicked(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                pnl3MouseExited(evt);
+            }
+        });
 
         javax.swing.GroupLayout pn3Layout = new javax.swing.GroupLayout(pn3);
         pn3.setLayout(pn3Layout);
         pn3Layout.setHorizontalGroup(
             pn3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pn3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel17, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(pnl3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 54, Short.MAX_VALUE)
         );
         pn3Layout.setVerticalGroup(
             pn3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pn3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel17, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(pnl3, javax.swing.GroupLayout.DEFAULT_SIZE, 47, Short.MAX_VALUE)
         );
 
         pn4.setBackground(new java.awt.Color(45, 45, 45));
         pn4.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         pn4.setPreferredSize(new java.awt.Dimension(60, 53));
 
-        jLabel18.setFont(new java.awt.Font("Arial", 1, 26)); // NOI18N
-        jLabel18.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel18.setText("4");
-        jLabel18.setToolTipText("");
+        pnl4.setFont(new java.awt.Font("Arial", 1, 26)); // NOI18N
+        pnl4.setForeground(new java.awt.Color(255, 255, 255));
+        pnl4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        pnl4.setText("4");
+        pnl4.setToolTipText("");
+        pnl4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                pnl4MouseClicked(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                pnl4MouseExited(evt);
+            }
+        });
 
         javax.swing.GroupLayout pn4Layout = new javax.swing.GroupLayout(pn4);
         pn4.setLayout(pn4Layout);
         pn4Layout.setHorizontalGroup(
             pn4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pn4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel18, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(pnl4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 54, Short.MAX_VALUE)
         );
         pn4Layout.setVerticalGroup(
             pn4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pn4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(pnl4, javax.swing.GroupLayout.DEFAULT_SIZE, 47, Short.MAX_VALUE)
         );
 
         pn5.setBackground(new java.awt.Color(45, 45, 45));
         pn5.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         pn5.setPreferredSize(new java.awt.Dimension(60, 53));
 
-        jLabel19.setFont(new java.awt.Font("Arial", 1, 26)); // NOI18N
-        jLabel19.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel19.setText("5");
-        jLabel19.setToolTipText("");
+        pnl5.setFont(new java.awt.Font("Arial", 1, 26)); // NOI18N
+        pnl5.setForeground(new java.awt.Color(255, 255, 255));
+        pnl5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        pnl5.setText("5");
+        pnl5.setToolTipText("");
+        pnl5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                pnl5MouseClicked(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                pnl5MouseExited(evt);
+            }
+        });
 
         javax.swing.GroupLayout pn5Layout = new javax.swing.GroupLayout(pn5);
         pn5.setLayout(pn5Layout);
         pn5Layout.setHorizontalGroup(
             pn5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pn5Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel19, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(pnl5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 54, Short.MAX_VALUE)
         );
         pn5Layout.setVerticalGroup(
             pn5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pn5Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(pnl5, javax.swing.GroupLayout.DEFAULT_SIZE, 47, Short.MAX_VALUE)
         );
 
         pn6.setBackground(new java.awt.Color(45, 45, 45));
         pn6.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         pn6.setPreferredSize(new java.awt.Dimension(60, 53));
 
-        jLabel20.setFont(new java.awt.Font("Arial", 1, 26)); // NOI18N
-        jLabel20.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel20.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel20.setText("6");
-        jLabel20.setToolTipText("");
+        pnl6.setFont(new java.awt.Font("Arial", 1, 26)); // NOI18N
+        pnl6.setForeground(new java.awt.Color(255, 255, 255));
+        pnl6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        pnl6.setText("6");
+        pnl6.setToolTipText("");
+        pnl6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                pnl6MouseClicked(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                pnl6MouseExited(evt);
+            }
+        });
 
         javax.swing.GroupLayout pn6Layout = new javax.swing.GroupLayout(pn6);
         pn6.setLayout(pn6Layout);
         pn6Layout.setHorizontalGroup(
             pn6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pn6Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel20, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(pnl6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 54, Short.MAX_VALUE)
         );
         pn6Layout.setVerticalGroup(
             pn6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pn6Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel20, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(pnl6, javax.swing.GroupLayout.DEFAULT_SIZE, 47, Short.MAX_VALUE)
         );
 
         pn7.setBackground(new java.awt.Color(45, 45, 45));
         pn7.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         pn7.setPreferredSize(new java.awt.Dimension(60, 53));
 
-        jLabel21.setFont(new java.awt.Font("Arial", 1, 26)); // NOI18N
-        jLabel21.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel21.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel21.setText("7");
-        jLabel21.setToolTipText("");
+        pnl7.setFont(new java.awt.Font("Arial", 1, 26)); // NOI18N
+        pnl7.setForeground(new java.awt.Color(255, 255, 255));
+        pnl7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        pnl7.setText("7");
+        pnl7.setToolTipText("");
+        pnl7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                pnl7MouseClicked(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                pnl7MouseExited(evt);
+            }
+        });
 
         javax.swing.GroupLayout pn7Layout = new javax.swing.GroupLayout(pn7);
         pn7.setLayout(pn7Layout);
         pn7Layout.setHorizontalGroup(
             pn7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pn7Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel21, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(pnl7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 54, Short.MAX_VALUE)
         );
         pn7Layout.setVerticalGroup(
             pn7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pn7Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel21, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(pnl7, javax.swing.GroupLayout.DEFAULT_SIZE, 47, Short.MAX_VALUE)
         );
 
         pn8.setBackground(new java.awt.Color(45, 45, 45));
         pn8.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         pn8.setPreferredSize(new java.awt.Dimension(60, 53));
 
-        jLabel22.setFont(new java.awt.Font("Arial", 1, 26)); // NOI18N
-        jLabel22.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel22.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel22.setText("8");
-        jLabel22.setToolTipText("");
+        pnl8.setFont(new java.awt.Font("Arial", 1, 26)); // NOI18N
+        pnl8.setForeground(new java.awt.Color(255, 255, 255));
+        pnl8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        pnl8.setText("8");
+        pnl8.setToolTipText("");
+        pnl8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                pnl8MouseClicked(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                pnl8MouseExited(evt);
+            }
+        });
 
         javax.swing.GroupLayout pn8Layout = new javax.swing.GroupLayout(pn8);
         pn8.setLayout(pn8Layout);
         pn8Layout.setHorizontalGroup(
             pn8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pn8Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel22, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(pnl8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 54, Short.MAX_VALUE)
         );
         pn8Layout.setVerticalGroup(
             pn8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pn8Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel22, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(pnl8, javax.swing.GroupLayout.DEFAULT_SIZE, 47, Short.MAX_VALUE)
         );
 
         pn9.setBackground(new java.awt.Color(45, 45, 45));
         pn9.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         pn9.setPreferredSize(new java.awt.Dimension(60, 53));
 
-        jLabel23.setFont(new java.awt.Font("Arial", 1, 26)); // NOI18N
-        jLabel23.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel23.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel23.setText("9");
-        jLabel23.setToolTipText("");
+        pnl9.setFont(new java.awt.Font("Arial", 1, 26)); // NOI18N
+        pnl9.setForeground(new java.awt.Color(255, 255, 255));
+        pnl9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        pnl9.setText("9");
+        pnl9.setToolTipText("");
+        pnl9.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                pnl9MouseClicked(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                pnl9MouseExited(evt);
+            }
+        });
 
         javax.swing.GroupLayout pn9Layout = new javax.swing.GroupLayout(pn9);
         pn9.setLayout(pn9Layout);
         pn9Layout.setHorizontalGroup(
             pn9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pn9Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel23, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(pnl9, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 54, Short.MAX_VALUE)
         );
         pn9Layout.setVerticalGroup(
             pn9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pn9Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel23, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(pnl9, javax.swing.GroupLayout.DEFAULT_SIZE, 47, Short.MAX_VALUE)
         );
 
         pn0.setBackground(new java.awt.Color(45, 45, 45));
         pn0.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         pn0.setPreferredSize(new java.awt.Dimension(60, 53));
 
-        jLabel24.setFont(new java.awt.Font("Arial", 1, 26)); // NOI18N
-        jLabel24.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel24.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel24.setText("0");
-        jLabel24.setToolTipText("");
+        pnl0.setFont(new java.awt.Font("Arial", 1, 26)); // NOI18N
+        pnl0.setForeground(new java.awt.Color(255, 255, 255));
+        pnl0.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        pnl0.setText("0");
+        pnl0.setToolTipText("");
+        pnl0.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                pnl0MouseClicked(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                pnl0MouseExited(evt);
+            }
+        });
 
         javax.swing.GroupLayout pn0Layout = new javax.swing.GroupLayout(pn0);
         pn0.setLayout(pn0Layout);
         pn0Layout.setHorizontalGroup(
             pn0Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pn0Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel24, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(pnl0, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 54, Short.MAX_VALUE)
         );
         pn0Layout.setVerticalGroup(
             pn0Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pn0Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel24, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(pnl0, javax.swing.GroupLayout.DEFAULT_SIZE, 47, Short.MAX_VALUE)
         );
 
         pnBranco.setBackground(new java.awt.Color(255, 255, 255));
         pnBranco.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
         pnBranco.setPreferredSize(new java.awt.Dimension(53, 53));
 
-        jLabel25.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jLabel25.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel25.setText("BRANCO");
+        pnlBranco.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        pnlBranco.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        pnlBranco.setText("BRANCO");
+        pnlBranco.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                pnlBrancoMouseClicked(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                pnlBrancoMouseExited(evt);
+            }
+        });
 
         javax.swing.GroupLayout pnBrancoLayout = new javax.swing.GroupLayout(pnBranco);
         pnBranco.setLayout(pnBrancoLayout);
         pnBrancoLayout.setHorizontalGroup(
             pnBrancoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel25, javax.swing.GroupLayout.DEFAULT_SIZE, 74, Short.MAX_VALUE)
+            .addComponent(pnlBranco, javax.swing.GroupLayout.DEFAULT_SIZE, 74, Short.MAX_VALUE)
         );
         pnBrancoLayout.setVerticalGroup(
             pnBrancoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel25, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 49, Short.MAX_VALUE)
+            .addComponent(pnlBranco, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 49, Short.MAX_VALUE)
         );
 
         pnCorrige.setBackground(new java.awt.Color(204, 0, 0));
         pnCorrige.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
         pnCorrige.setPreferredSize(new java.awt.Dimension(53, 53));
 
-        jLabel26.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jLabel26.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel26.setText("CORRIGE");
+        pnlCorrige.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        pnlCorrige.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        pnlCorrige.setText("CORRIGE");
+        pnlCorrige.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                pnlCorrigeMouseClicked(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                pnlCorrigeMouseExited(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                pnlCorrigeMouseReleased(evt);
+            }
+        });
 
         javax.swing.GroupLayout pnCorrigeLayout = new javax.swing.GroupLayout(pnCorrige);
         pnCorrige.setLayout(pnCorrigeLayout);
         pnCorrigeLayout.setHorizontalGroup(
             pnCorrigeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel26, javax.swing.GroupLayout.DEFAULT_SIZE, 74, Short.MAX_VALUE)
+            .addComponent(pnlCorrige, javax.swing.GroupLayout.DEFAULT_SIZE, 74, Short.MAX_VALUE)
         );
         pnCorrigeLayout.setVerticalGroup(
             pnCorrigeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel26, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 49, Short.MAX_VALUE)
+            .addComponent(pnlCorrige, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 49, Short.MAX_VALUE)
         );
 
         pnConfirma.setBackground(new java.awt.Color(0, 166, 55));
         pnConfirma.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
         pnConfirma.setPreferredSize(new java.awt.Dimension(53, 53));
 
-        jLabel27.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
-        jLabel27.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel27.setText("CONFIRMA");
+        pnlConfirma.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
+        pnlConfirma.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        pnlConfirma.setText("CONFIRMA");
+        pnlConfirma.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                pnlConfirmaMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout pnConfirmaLayout = new javax.swing.GroupLayout(pnConfirma);
         pnConfirma.setLayout(pnConfirmaLayout);
         pnConfirmaLayout.setHorizontalGroup(
             pnConfirmaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel27, javax.swing.GroupLayout.DEFAULT_SIZE, 74, Short.MAX_VALUE)
+            .addComponent(pnlConfirma, javax.swing.GroupLayout.DEFAULT_SIZE, 74, Short.MAX_VALUE)
         );
         pnConfirmaLayout.setVerticalGroup(
             pnConfirmaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel27, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 63, Short.MAX_VALUE)
+            .addComponent(pnlConfirma, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 63, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout pnlDigitosLayout = new javax.swing.GroupLayout(pnlDigitos);
@@ -559,27 +612,12 @@ public class TelaUrna extends javax.swing.JFrame {
         lblCargo.setFont(new java.awt.Font("Arial", 0, 22)); // NOI18N
         lblCargo.setText("Cargo Show");
 
-        lblNum2.setFont(new java.awt.Font("Arial", 0, 26)); // NOI18N
-        lblNum2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblNum2.setText("0");
-        lblNum2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        lblNum1.setFont(new java.awt.Font("Arial", 0, 26)); // NOI18N
-        lblNum1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblNum1.setText("0");
-        lblNum1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        jLabel7.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
-        jLabel7.setText("Número:");
-
         lblNome.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
-        lblNome.setText("Nome show");
 
         jLabel9.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
         jLabel9.setText("Nome:");
 
         lblPartido.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
-        lblPartido.setText("Partido show");
 
         jLabel11.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
         jLabel11.setText("Aperte a tecla:");
@@ -640,7 +678,7 @@ public class TelaUrna extends javax.swing.JFrame {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(pnImagem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(75, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         lblId.setFont(new java.awt.Font("Arial", 0, 26)); // NOI18N
@@ -651,6 +689,22 @@ public class TelaUrna extends javax.swing.JFrame {
         jLabel15.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
         jLabel15.setText("Nº do Eleitor:");
 
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        lblNum1.setFont(new java.awt.Font("Arial", 0, 26)); // NOI18N
+        lblNum1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblNum1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel1.add(lblNum1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 31, 41));
+
+        lblNum2.setFont(new java.awt.Font("Arial", 0, 26)); // NOI18N
+        lblNum2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblNum2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel1.add(lblNum2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 0, 31, 41));
+
+        jLabel7.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
+        jLabel7.setText("Número:");
+
         javax.swing.GroupLayout pnTelaLayout = new javax.swing.GroupLayout(pnTela);
         pnTela.setLayout(pnTelaLayout);
         pnTelaLayout.setHorizontalGroup(
@@ -659,26 +713,30 @@ public class TelaUrna extends javax.swing.JFrame {
             .addGroup(pnTelaLayout.createSequentialGroup()
                 .addGroup(pnTelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnTelaLayout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(jLabel1))
-                    .addGroup(pnTelaLayout.createSequentialGroup()
-                        .addGap(179, 179, 179)
-                        .addComponent(lblCargo))
-                    .addGroup(pnTelaLayout.createSequentialGroup()
-                        .addContainerGap()
                         .addGroup(pnTelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel7)
-                            .addComponent(jLabel9)
-                            .addComponent(jLabel12))
-                        .addGap(34, 34, 34)
-                        .addGroup(pnTelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblNome)
                             .addGroup(pnTelaLayout.createSequentialGroup()
-                                .addComponent(lblNum1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(lblNum2, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(lblPartido))))
-                .addGap(18, 18, Short.MAX_VALUE)
+                                .addContainerGap()
+                                .addComponent(jLabel9)
+                                .addGap(35, 35, 35)
+                                .addComponent(lblNome, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(pnTelaLayout.createSequentialGroup()
+                                .addGap(10, 10, 10)
+                                .addComponent(jLabel1))
+                            .addGroup(pnTelaLayout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(jLabel7)
+                                .addGap(18, 18, 18)
+                                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(pnTelaLayout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(jLabel12)
+                                .addGap(18, 18, 18)
+                                .addComponent(lblPartido, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnTelaLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(lblCargo)
+                        .addGap(174, 174, 174)))
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(pnTelaLayout.createSequentialGroup()
                 .addContainerGap()
@@ -691,8 +749,7 @@ public class TelaUrna extends javax.swing.JFrame {
                         .addGroup(pnTelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(pnTelaLayout.createSequentialGroup()
                                 .addGap(10, 10, 10)
-                                .addComponent(jLabel14)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addComponent(jLabel14))
                             .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel15)
@@ -705,27 +762,28 @@ public class TelaUrna extends javax.swing.JFrame {
             .addGroup(pnTelaLayout.createSequentialGroup()
                 .addGroup(pnTelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnTelaLayout.createSequentialGroup()
+                        .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
+                    .addGroup(pnTelaLayout.createSequentialGroup()
                         .addGap(11, 11, 11)
                         .addComponent(jLabel1)
-                        .addGap(33, 33, 33)
+                        .addGap(22, 22, 22)
                         .addComponent(lblCargo)
-                        .addGap(37, 37, 37)
-                        .addGroup(pnTelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblNum2, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblNum1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel7))
-                        .addGap(18, 18, 18)
-                        .addGroup(pnTelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblNome)
-                            .addComponent(jLabel9))
-                        .addGap(18, 18, 18)
-                        .addGroup(pnTelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblPartido)
-                            .addComponent(jLabel12))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(pnTelaLayout.createSequentialGroup()
-                        .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
+                        .addGap(29, 29, 29)
+                        .addGroup(pnTelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(pnTelaLayout.createSequentialGroup()
+                                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(lblNome, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(pnTelaLayout.createSequentialGroup()
+                                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel9)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
+                        .addGroup(pnTelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel12)
+                            .addComponent(lblPartido, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(65, 65, 65)))
                 .addComponent(pnInfo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel11)
@@ -749,6 +807,201 @@ public class TelaUrna extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void pn1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pn1MouseClicked
+
+    }//GEN-LAST:event_pn1MouseClicked
+
+    private void pnl1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnl1MouseClicked
+       String l1 = lblNum1.getText();
+       String l2 = lblNum2.getText();
+       
+       if (!l1.equals("") && l2.equals("")) {
+           lblNum2.setText(pnl1.getText());
+       } else if (l2.equals("")) {
+           lblNum1.setText(pnl1.getText());
+       } else if (!l1.equals("") && !l2.equals("")) {
+           JOptionPane.showMessageDialog(null, "Atenção: Aperte CORRIGE para corrigir seu voto", "Atenção!" , 3);
+       }
+      
+    }//GEN-LAST:event_pnl1MouseClicked
+
+    private void pnl2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnl2MouseClicked
+       String l1 = lblNum1.getText();
+       String l2 = lblNum2.getText();
+       
+       if (!l1.equals("") && l2.equals("")) {
+           lblNum2.setText(pnl2.getText());
+       } else if (l2.equals("")) {
+           lblNum1.setText(pnl2.getText());
+       } else if (!l1.equals("") && !l2.equals("")) {
+           JOptionPane.showMessageDialog(null, "Atenção: Aperte CORRIGE para corrigir seu voto", "Atenção!" , 3);
+       } 
+    }//GEN-LAST:event_pnl2MouseClicked
+
+    private void pnl3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnl3MouseClicked
+       String l1 = lblNum1.getText();
+       String l2 = lblNum2.getText();
+       
+       if (!l1.equals("") && l2.equals("")) {
+           lblNum2.setText(pnl3.getText());
+       } else if (l2.equals("")) {
+           lblNum1.setText(pnl3.getText());
+       } else if (!l1.equals("") && !l2.equals("")) {
+           JOptionPane.showMessageDialog(null, "Atenção: Aperte CORRIGE para corrigir seu voto", "Atenção!" , 3);
+       } 
+    }//GEN-LAST:event_pnl3MouseClicked
+
+    private void pnl4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnl4MouseClicked
+       String l1 = lblNum1.getText();
+       String l2 = lblNum2.getText();
+       
+       if (!l1.equals("") && l2.equals("")) {
+           lblNum2.setText(pnl4.getText());
+       } else if (l2.equals("")) {
+           lblNum1.setText(pnl4.getText());
+       } else if (!l1.equals("") && !l2.equals("")) {
+           JOptionPane.showMessageDialog(null, "Atenção: Aperte CORRIGE para corrigir seu voto", "Atenção!" , 3);
+       } 
+    }//GEN-LAST:event_pnl4MouseClicked
+
+    private void pnl5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnl5MouseClicked
+       String l1 = lblNum1.getText();
+       String l2 = lblNum2.getText();
+       
+       if (!l1.equals("") && l2.equals("")) {
+           lblNum2.setText(pnl5.getText());
+       } else if (l2.equals("")) {
+           lblNum1.setText(pnl5.getText());
+       } else if (!l1.equals("") && !l2.equals("")) {
+           JOptionPane.showMessageDialog(null, "Atenção: Aperte CORRIGE para corrigir seu voto", "Atenção!" , 3);
+       } 
+    }//GEN-LAST:event_pnl5MouseClicked
+
+    private void pnl6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnl6MouseClicked
+       String l1 = lblNum1.getText();
+       String l2 = lblNum2.getText();
+       
+       if (!l1.equals("") && l2.equals("")) {
+           lblNum2.setText(pnl6.getText());
+       } else if (l2.equals("")) {
+           lblNum1.setText(pnl6.getText());
+       } else if (!l1.equals("") && !l2.equals("")) {
+           JOptionPane.showMessageDialog(null, "Atenção: Aperte CORRIGE para corrigir seu voto", "Atenção!" , 3);
+       } 
+    }//GEN-LAST:event_pnl6MouseClicked
+
+    private void pnl7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnl7MouseClicked
+       String l1 = lblNum1.getText();
+       String l2 = lblNum2.getText();
+       
+       if (!l1.equals("") && l2.equals("")) {
+           lblNum2.setText(pnl7.getText());
+       } else if (l2.equals("")) {
+           lblNum1.setText(pnl7.getText());
+       } else if (!l1.equals("") && !l2.equals("")) {
+           JOptionPane.showMessageDialog(null, "Atenção: Aperte CORRIGE para corrigir seu voto", "Atenção!" , 3);
+       } 
+    }//GEN-LAST:event_pnl7MouseClicked
+
+    private void pnl8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnl8MouseClicked
+       String l1 = lblNum1.getText();
+       String l2 = lblNum2.getText();
+       
+       if (!l1.equals("") && l2.equals("")) {
+           lblNum2.setText(pnl8.getText());
+       } else if (l2.equals("")) {
+           lblNum1.setText(pnl8.getText());
+       } else if (!l1.equals("") && !l2.equals("")) {
+           JOptionPane.showMessageDialog(null, "Atenção: Aperte CORRIGE para corrigir seu voto", "Atenção!" , 3);
+       } 
+    }//GEN-LAST:event_pnl8MouseClicked
+
+    private void pnl9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnl9MouseClicked
+       String l1 = lblNum1.getText();
+       String l2 = lblNum2.getText();
+       
+       if (!l1.equals("") && l2.equals("")) {
+           lblNum2.setText(pnl9.getText());
+       } else if (l2.equals("")) {
+           lblNum1.setText(pnl9.getText());
+       } else if (!l1.equals("") && !l2.equals("")) {
+           JOptionPane.showMessageDialog(null, "Atenção: Aperte CORRIGE para corrigir seu voto", "Atenção!" , 3);
+       } 
+    }//GEN-LAST:event_pnl9MouseClicked
+
+    private void pnl0MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnl0MouseClicked
+       String l1 = lblNum1.getText();
+       String l2 = lblNum2.getText();
+       
+       if (!l1.equals("") && l2.equals("")) {
+           lblNum2.setText(pnl0.getText());
+       } else if (l2.equals("")) {
+           lblNum1.setText(pnl0.getText());
+       } else if (!l1.equals("") && !l2.equals("")) {
+           JOptionPane.showMessageDialog(null, "Atenção: Aperte CORRIGE para corrigir seu voto", "Atenção!" , 3);
+       } 
+    }//GEN-LAST:event_pnl0MouseClicked
+
+    private void pnlBrancoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlBrancoMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_pnlBrancoMouseClicked
+
+    private void pnlCorrigeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlCorrigeMouseClicked
+        lblNum1.setText("");
+        lblNum2.setText("");
+        lblNome.setText("");
+        lblPartido.setText("");
+        lblIcone.setIcon(null);
+        
+        pnCorrige.setBorder(null);
+    }//GEN-LAST:event_pnlCorrigeMouseClicked
+
+    private void pnlConfirmaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlConfirmaMouseClicked
+        pnConfirma.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+    }//GEN-LAST:event_pnlConfirmaMouseClicked
+
+    private void pnlCorrigeMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlCorrigeMouseExited
+    }//GEN-LAST:event_pnlCorrigeMouseExited
+
+    private void pnlCorrigeMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlCorrigeMouseReleased
+        
+    }//GEN-LAST:event_pnlCorrigeMouseReleased
+
+    private void pnl1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnl1MouseExited
+        
+    }//GEN-LAST:event_pnl1MouseExited
+
+    private void pnl3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnl3MouseExited
+        
+    }//GEN-LAST:event_pnl3MouseExited
+
+    private void pnl4MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnl4MouseExited
+    }//GEN-LAST:event_pnl4MouseExited
+
+    private void pnl5MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnl5MouseExited
+    }//GEN-LAST:event_pnl5MouseExited
+
+    private void pnl6MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnl6MouseExited
+    }//GEN-LAST:event_pnl6MouseExited
+
+    private void pnl7MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnl7MouseExited
+    }//GEN-LAST:event_pnl7MouseExited
+
+    private void pnl8MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnl8MouseExited
+    }//GEN-LAST:event_pnl8MouseExited
+
+    private void pnl9MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnl9MouseExited
+    }//GEN-LAST:event_pnl9MouseExited
+
+    private void pnl0MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnl0MouseExited
+    }//GEN-LAST:event_pnl0MouseExited
+
+    private void pnlBrancoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlBrancoMouseExited
+    }//GEN-LAST:event_pnlBrancoMouseExited
+
+    private void pnl2MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnl2MouseReleased
+    }//GEN-LAST:event_pnl2MouseReleased
 
     /**
      * @param args the command line arguments
@@ -793,26 +1046,13 @@ public class TelaUrna extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
-    private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
-    private javax.swing.JLabel jLabel22;
-    private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel24;
-    private javax.swing.JLabel jLabel25;
-    private javax.swing.JLabel jLabel26;
-    private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel20;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
@@ -839,6 +1079,19 @@ public class TelaUrna extends javax.swing.JFrame {
     private javax.swing.JPanel pnImagem;
     private javax.swing.JPanel pnInfo;
     private javax.swing.JPanel pnTela;
+    private javax.swing.JLabel pnl0;
+    private javax.swing.JLabel pnl1;
+    private javax.swing.JLabel pnl2;
+    private javax.swing.JLabel pnl3;
+    private javax.swing.JLabel pnl4;
+    private javax.swing.JLabel pnl5;
+    private javax.swing.JLabel pnl6;
+    private javax.swing.JLabel pnl7;
+    private javax.swing.JLabel pnl8;
+    private javax.swing.JLabel pnl9;
+    private javax.swing.JLabel pnlBranco;
+    private javax.swing.JLabel pnlConfirma;
+    private javax.swing.JLabel pnlCorrige;
     private javax.swing.JPanel pnlDigitos;
     private javax.swing.JPanel pnlJustica;
     // End of variables declaration//GEN-END:variables

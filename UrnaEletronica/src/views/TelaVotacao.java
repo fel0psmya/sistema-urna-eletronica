@@ -3,22 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package view;
-
-import java.text.ParseException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.swing.text.MaskFormatter;
-import java.text.DateFormat;
-import java.util.Calendar;
-import java.util.GregorianCalendar;
+package views;
 
 /**
  *
  * @author felip
  */
 public class TelaVotacao extends javax.swing.JFrame {
-    private final GregorianCalendar data = new GregorianCalendar();
     /** 
      * Creates new form TelaVotacao
      */
@@ -43,11 +34,10 @@ public class TelaVotacao extends javax.swing.JFrame {
         txtData = new javax.swing.JFormattedTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         txtMV = new javax.swing.JTextArea();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        txtCargo = new javax.swing.JList<>();
         jLabel4 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         btnCad = new javax.swing.JButton();
+        txtCargo = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Nova Votação");
@@ -89,7 +79,7 @@ public class TelaVotacao extends javax.swing.JFrame {
 
         jLabel3.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         jLabel3.setText("Cargo");
-        pnConteudo.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, -1, -1));
+        pnConteudo.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 80, 30));
 
         jLabel1.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         jLabel1.setText("Data");
@@ -117,16 +107,6 @@ public class TelaVotacao extends javax.swing.JFrame {
 
         pnConteudo.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 70, 260, -1));
 
-        txtCargo.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        txtCargo.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
-        jScrollPane2.setViewportView(txtCargo);
-
-        pnConteudo.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 180, 150, 110));
-
         jLabel4.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         jLabel4.setText("Motivação");
         pnConteudo.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 70, 20));
@@ -145,6 +125,10 @@ public class TelaVotacao extends javax.swing.JFrame {
             }
         });
         pnConteudo.add(btnCad, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 310, 110, 30));
+
+        txtCargo.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        txtCargo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        pnConteudo.add(txtCargo, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 180, 110, 30));
 
         getContentPane().add(pnConteudo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 400, 360));
 
@@ -203,11 +187,10 @@ public class TelaVotacao extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JPanel pnBaixo;
     private javax.swing.JPanel pnCima;
     private javax.swing.JPanel pnConteudo;
-    private javax.swing.JList<String> txtCargo;
+    private javax.swing.JComboBox<String> txtCargo;
     private javax.swing.JFormattedTextField txtData;
     private javax.swing.JTextArea txtMV;
     // End of variables declaration//GEN-END:variables
