@@ -6,9 +6,6 @@
 package controller;
 import model.Banco;
 import model.Candidato;
-import model.Cargo;
-import model.Eleitor;
-import model.Votacao;
 /**
  *
  * @author felip
@@ -16,17 +13,13 @@ import model.Votacao;
 public class ContCand {
     public String respostaTxt;
     
-    public ContCand (int id, String nome, String partido, String numero,
+    public ContCand (String nome, String partido, String numero,
     String img, String cargo) {
-        Candidato candidato = new Candidato(id, nome, partido, numero, img, 
+        Candidato candidato = new Candidato(nome, partido, numero, img, 
         cargo);
         Banco b = new Banco();
-        boolean resposta = b.Cadastrar(candidato);
-        if (resposta == true) {
-            respostaTxt = "Cadastrado com sucesso! :D";
-        } else {
-            respostaTxt = "ERRO:";
-        }
+        b.Cadastrar(candidato);
     } /* Recebe os valores da view e envia para o model através da instância de
     Candidato */
+ 
 }

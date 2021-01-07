@@ -12,6 +12,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import controller.ContCand;
 import javax.swing.JOptionPane;
+import model.Banco;
 /**
  *
  * @author felip
@@ -42,16 +43,18 @@ public class TelaCandidato extends javax.swing.JFrame {
         lblIcone = new javax.swing.JLabel();
         txtImg = new javax.swing.JTextField();
         pnBaixo = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        txtId = new javax.swing.JTextField();
         txtNome = new javax.swing.JTextField();
         txtPart = new javax.swing.JTextField();
         txtNum = new javax.swing.JTextField();
         btnCad = new javax.swing.JButton();
+        Banco b = new Banco ();
+        b.comboBoxCargo();
+
+        String[] show = b.modeloCombo.split(",");
         txtCargo = new javax.swing.JComboBox<>();
 
         jList1.setModel(new javax.swing.AbstractListModel<String>() {
@@ -118,46 +121,36 @@ public class TelaCandidato extends javax.swing.JFrame {
         pnBaixo.setBackground(new java.awt.Color(255, 255, 255));
         pnBaixo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel2.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
-        jLabel2.setText("ID");
-        pnBaixo.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 30, 20));
-
         jLabel3.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         jLabel3.setText("Nome");
-        pnBaixo.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 63, -1, -1));
+        pnBaixo.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         jLabel4.setText("Partido");
-        pnBaixo.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, -1, 20));
+        pnBaixo.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, -1, 20));
 
         jLabel5.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         jLabel5.setText("Número");
-        pnBaixo.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, -1, 20));
+        pnBaixo.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, -1, 20));
 
         jLabel6.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         jLabel6.setText("Cargo pretendido");
-        pnBaixo.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, -1, 30));
-
-        txtId.setEditable(false);
-        txtId.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        txtId.setToolTipText("");
-        txtId.setPreferredSize(null);
-        pnBaixo.add(txtId, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 20, 50, -1));
+        pnBaixo.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, -1, 30));
 
         txtNome.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         txtNome.setToolTipText("");
         txtNome.setPreferredSize(null);
-        pnBaixo.add(txtNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 60, 330, -1));
+        pnBaixo.add(txtNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 30, 330, -1));
 
         txtPart.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         txtPart.setToolTipText("");
         txtPart.setPreferredSize(null);
-        pnBaixo.add(txtPart, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 100, 330, -1));
+        pnBaixo.add(txtPart, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 70, 330, -1));
 
         txtNum.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         txtNum.setToolTipText("");
         txtNum.setPreferredSize(null);
-        pnBaixo.add(txtNum, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 140, 55, -1));
+        pnBaixo.add(txtNum, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 110, 55, -1));
 
         btnCad.setBackground(new java.awt.Color(0, 153, 255));
         btnCad.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
@@ -168,11 +161,11 @@ public class TelaCandidato extends javax.swing.JFrame {
                 btnCadActionPerformed(evt);
             }
         });
-        pnBaixo.add(btnCad, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 320, 110, 30));
+        pnBaixo.add(btnCad, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 280, 110, 30));
 
         txtCargo.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        txtCargo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        pnBaixo.add(txtCargo, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 180, 110, 30));
+        txtCargo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { show[0], show[1], show[3], show[4] }));
+        pnBaixo.add(txtCargo, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 150, 110, 30));
 
         getContentPane().add(pnBaixo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 230, 450, 380));
 
@@ -199,12 +192,10 @@ public class TelaCandidato extends javax.swing.JFrame {
     }//GEN-LAST:event_txtImgActionPerformed
 
     private void btnCadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadActionPerformed
-            ContCand c = new ContCand(Integer.parseInt(txtId.getText()), 
-            txtNome.getText(), txtPart.getText(), txtNum.getText(), 
+            ContCand c = new ContCand(txtNome.getText(), txtPart.getText(), txtNum.getText(), 
             txtImg.getText(), txtCargo.getSelectedItem().toString());
             // Envia os valores para o controlador
-           
-            JOptionPane.showMessageDialog(null, c.respostaTxt);
+          
     }//GEN-LAST:event_btnCadActionPerformed
 
     /**
@@ -245,7 +236,6 @@ public class TelaCandidato extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCad;
     private javax.swing.JButton jButton2;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -257,7 +247,6 @@ public class TelaCandidato extends javax.swing.JFrame {
     private javax.swing.JPanel pnCima;
     private javax.swing.JPanel pnFoto;
     private javax.swing.JComboBox<String> txtCargo;
-    private javax.swing.JTextField txtId;
     private javax.swing.JTextField txtImg;
     private javax.swing.JTextField txtNome;
     private javax.swing.JTextField txtNum;

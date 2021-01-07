@@ -10,5 +10,9 @@ package model;
  * @author felip
  */
 public class Cargo {
+    public static String cargo;
     
+    public Cargo (String nome_cargo) {
+        this.cargo = nome_cargo;
+    }
 }

@@ -4,11 +4,16 @@
  * and open the template in the editor.
  */
 package controller;
-
+import model.Banco;
+import model.Cargo;
 /**
  *
  * @author felip
  */
 public class ContCargo {
-    
+    public ContCargo(String nome_cargo) {
+        Cargo c = new Cargo (nome_cargo);
+        Banco b = new Banco();
+        b.Cadastrar(c);
+    }
 }
