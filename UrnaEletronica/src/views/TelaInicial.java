@@ -35,8 +35,6 @@ public class TelaInicial extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         pC = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        pCargo = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
         pEleitor = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
@@ -80,19 +78,19 @@ public class TelaInicial extends javax.swing.JFrame {
         pVLayout.setHorizontalGroup(
             pVLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pVLayout.createSequentialGroup()
-                .addGap(85, 85, 85)
+                .addGap(86, 86, 86)
                 .addComponent(jLabel1)
-                .addContainerGap(98, Short.MAX_VALUE))
+                .addContainerGap(100, Short.MAX_VALUE))
         );
         pVLayout.setVerticalGroup(
             pVLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pVLayout.createSequentialGroup()
-                .addContainerGap(39, Short.MAX_VALUE)
+                .addContainerGap(38, Short.MAX_VALUE)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30))
+                .addGap(31, 31, 31))
         );
 
-        jPanel1.add(pV, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 329, -1));
+        jPanel1.add(pV, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 329, -1));
 
         pC.setBackground(new java.awt.Color(0, 0, 0));
         pC.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -118,7 +116,7 @@ public class TelaInicial extends javax.swing.JFrame {
             .addGroup(pCLayout.createSequentialGroup()
                 .addGap(72, 72, 72)
                 .addComponent(jLabel3)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(91, Short.MAX_VALUE))
         );
         pCLayout.setVerticalGroup(
             pCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -128,43 +126,7 @@ public class TelaInicial extends javax.swing.JFrame {
                 .addGap(26, 26, 26))
         );
 
-        jPanel1.add(pC, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, 329, -1));
-
-        pCargo.setBackground(new java.awt.Color(0, 0, 0));
-        pCargo.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                pCargoMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                pCargoMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                pCargoMouseExited(evt);
-            }
-        });
-
-        jLabel2.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Novo cargo");
-
-        javax.swing.GroupLayout pCargoLayout = new javax.swing.GroupLayout(pCargo);
-        pCargo.setLayout(pCargoLayout);
-        pCargoLayout.setHorizontalGroup(
-            pCargoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pCargoLayout.createSequentialGroup()
-                .addGap(94, 94, 94)
-                .addComponent(jLabel2)
-                .addContainerGap(114, Short.MAX_VALUE))
-        );
-        pCargoLayout.setVerticalGroup(
-            pCargoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pCargoLayout.createSequentialGroup()
-                .addContainerGap(26, Short.MAX_VALUE)
-                .addComponent(jLabel2)
-                .addGap(21, 21, 21))
-        );
-
-        jPanel1.add(pCargo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 230, -1, -1));
+        jPanel1.add(pC, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 190, 329, -1));
 
         pEleitor.setBackground(new java.awt.Color(0, 0, 0));
         pEleitor.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -200,7 +162,7 @@ public class TelaInicial extends javax.swing.JFrame {
                 .addContainerGap(35, Short.MAX_VALUE))
         );
 
-        jPanel1.add(pEleitor, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 320, 329, -1));
+        jPanel1.add(pEleitor, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 280, 329, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 460));
 
@@ -214,9 +176,9 @@ public class TelaInicial extends javax.swing.JFrame {
 
         jLabel6.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         jLabel6.setText("Made by: Felipe Maia");
-        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(248, 420, -1, -1));
+        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 430, -1, -1));
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(323, 0, 430, 453));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(323, 0, 430, 460));
 
         menuV.setText("Novo");
 
@@ -294,11 +256,6 @@ public class TelaInicial extends javax.swing.JFrame {
         jLabel3.setForeground(Color.black);
     }//GEN-LAST:event_pCMouseEntered
 
-    private void pCargoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pCargoMouseEntered
-        pCargo.setBackground(Color.white);
-        jLabel2.setForeground(Color.black);
-    }//GEN-LAST:event_pCargoMouseEntered
-
     private void pEleitorMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pEleitorMouseEntered
         pEleitor.setBackground(Color.white);
         jLabel4.setForeground(Color.black);
@@ -313,11 +270,6 @@ public class TelaInicial extends javax.swing.JFrame {
         pC.setBackground(Color.black);
         jLabel3.setForeground(Color.white);
     }//GEN-LAST:event_pCMouseExited
-
-    private void pCargoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pCargoMouseExited
-        pCargo.setBackground(Color.black);
-        jLabel2.setForeground(Color.white);
-    }//GEN-LAST:event_pCargoMouseExited
 
     private void pEleitorMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pEleitorMouseExited
         pEleitor.setBackground(Color.black);
@@ -337,12 +289,8 @@ public class TelaInicial extends javax.swing.JFrame {
     }//GEN-LAST:event_pCMouseClicked
 
     private void itemCargActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemCargActionPerformed
-        new TelaCargo().show();
-    }//GEN-LAST:event_itemCargActionPerformed
 
-    private void pCargoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pCargoMouseClicked
-        new TelaCargo().show();
-    }//GEN-LAST:event_pCargoMouseClicked
+    }//GEN-LAST:event_itemCargActionPerformed
 
     private void pEleitorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pEleitorMouseClicked
         new TelaEleitor().show();
@@ -389,7 +337,6 @@ public class TelaInicial extends javax.swing.JFrame {
     private javax.swing.JMenuItem itemE;
     private javax.swing.JMenuItem itemNV;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -401,7 +348,6 @@ public class TelaInicial extends javax.swing.JFrame {
     private javax.swing.JMenu menuE;
     private javax.swing.JMenu menuV;
     private javax.swing.JPanel pC;
-    private javax.swing.JPanel pCargo;
     private javax.swing.JPanel pEleitor;
     private javax.swing.JPanel pV;
     // End of variables declaration//GEN-END:variables

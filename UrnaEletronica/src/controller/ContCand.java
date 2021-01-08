@@ -14,9 +14,8 @@ public class ContCand {
     public String respostaTxt;
     
     public ContCand (String nome, String partido, String numero,
-    String img, String cargo) {
-        Candidato candidato = new Candidato(nome, partido, numero, img, 
-        cargo);
+    String img) {
+        Candidato candidato = new Candidato(nome, partido, numero, img);
         Banco b = new Banco();
         b.Cadastrar(candidato);
     } /* Recebe os valores da view e envia para o model através da instância de

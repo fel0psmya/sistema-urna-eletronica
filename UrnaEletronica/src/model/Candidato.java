@@ -10,14 +10,13 @@ package model;
  * @author felip
  */
 public class Candidato {
-    public static String nome, partido, numero, img, cargo;
+    public static String nome, partido, numero, img;
             
     public Candidato (String nome, String partido, String numero,
-    String img, String cargo) {
+    String img) {
         this.nome = nome;
         this.partido = partido;
         this.numero = numero;
         this.img = img;
-        this.cargo = cargo; // Fazer comparação com o banco
     } // Recebe os valores do controlador
 }

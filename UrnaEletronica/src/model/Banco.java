@@ -39,7 +39,7 @@ public class Banco {
             conectar();
             stmt = conn.createStatement();
             stmt.executeUpdate("INSERT into candidato values (default, '"+ Candidato.nome +"','"
-            + Candidato.partido +"','"+ Candidato.numero +"','"+ Candidato.img +"','"+ Candidato.cargo +"')");
+            + Candidato.partido +"','"+ Candidato.numero +"','"+ Candidato.img +"')");
             JOptionPane.showMessageDialog(null, "Cadastrado com sucesso! :D", "Show!", JOptionPane.INFORMATION_MESSAGE);
             desconectar();
             return true;
@@ -49,51 +49,6 @@ public class Banco {
             return false;
         }
         
-    }
-    
-    public String modeloCombo;
-    
-    public void setModel (String model) {
-        this.modeloCombo = model;
-    }
-    
-    public void comboBoxCargo () {
-        try {
-            conectar();
-            stmt = conn.createStatement();
-            rs = stmt.executeQuery("SELECT count(*) as total FROM cargo");
-            int k = rs.getInt("total");
-            rs.close(); stmt.close();
-            JOptionPane.showMessageDialog(null, "show");
-            // criando o model
-            stmt = conn.createStatement();
-            
-            String model;
-            for (int i = 1; i <= k; i++) {
-                model = "" + stmt.executeQuery("SELECT nome_cargo FROM cargo WHERE id = " + i).getString("nome_cargo") + ",";
-                setModel(model);
-            }
-            desconectar();
-        } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "ERRO: " + e, "Falha ao cadastrar", JOptionPane.ERROR_MESSAGE);
-            desconectar();
-            
-        }
-    }
-    /* ================== CARGO ================== */
-    public boolean Cadastrar (Cargo cargo) {  
-        try {
-            conectar();
-            stmt = conn.createStatement();
-            stmt.executeUpdate("INSERT into cargo VALUES (default, '"+ Cargo.cargo +"')");
-            JOptionPane.showMessageDialog(null, "Cadastrado com sucesso! :D", "Show!", JOptionPane.INFORMATION_MESSAGE);
-            desconectar();
-            return true;
-        } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "ERRO: " + e, "Falha ao cadastrar", JOptionPane.ERROR_MESSAGE);
-            desconectar();
-            return false;
-        }
     }
     
     public boolean Cadastrar (Eleitor eleitor) {
