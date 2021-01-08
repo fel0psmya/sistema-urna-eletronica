@@ -50,6 +50,8 @@ public class TelaCandidato extends javax.swing.JFrame {
         txtPart = new javax.swing.JTextField();
         txtNum = new javax.swing.JTextField();
         btnCad = new javax.swing.JButton();
+        txtPart1 = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
 
         jList1.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -61,7 +63,8 @@ public class TelaCandidato extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Cadastro de Candidato");
         setBackground(new java.awt.Color(255, 255, 255));
-        setMinimumSize(new java.awt.Dimension(20, 480));
+        setMinimumSize(new java.awt.Dimension(450, 500));
+        setPreferredSize(new java.awt.Dimension(450, 520));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -151,7 +154,16 @@ public class TelaCandidato extends javax.swing.JFrame {
                 btnCadActionPerformed(evt);
             }
         });
-        pnBaixo.add(btnCad, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 160, 110, 30));
+        pnBaixo.add(btnCad, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 200, 110, 30));
+
+        txtPart1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        txtPart1.setToolTipText("");
+        txtPart1.setPreferredSize(null);
+        pnBaixo.add(txtPart1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 150, 180, -1));
+
+        jLabel6.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel6.setText("<html>Cargo <br> pretendido </html>");
+        pnBaixo.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, 60, 30));
 
         getContentPane().add(pnBaixo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 230, 450, 380));
 
@@ -174,14 +186,14 @@ public class TelaCandidato extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void txtImgActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtImgActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_txtImgActionPerformed
 
     private void btnCadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadActionPerformed
             ContCand c = new ContCand(txtNome.getText(), txtPart.getText(), txtNum.getText(), 
             txtImg.getText());
             // Envia os valores para o controlador
-            txtNome.setText(txtImg.getText());
+            
     }//GEN-LAST:event_btnCadActionPerformed
 
     /**
@@ -225,6 +237,7 @@ public class TelaCandidato extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JList<String> jList1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblIcone;
@@ -235,5 +248,6 @@ public class TelaCandidato extends javax.swing.JFrame {
     private javax.swing.JTextField txtNome;
     private javax.swing.JTextField txtNum;
     private javax.swing.JTextField txtPart;
+    private javax.swing.JTextField txtPart1;
     // End of variables declaration//GEN-END:variables
 }

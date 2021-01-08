@@ -5,6 +5,8 @@
  */
 package views;
 
+import java.time.LocalDate;
+
 /**
  *
  * @author felip
@@ -37,7 +39,7 @@ public class TelaVotacao extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         btnCad = new javax.swing.JButton();
-        txtCargo = new javax.swing.JComboBox<>();
+        txtCargo = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Nova Votação");
@@ -57,7 +59,7 @@ public class TelaVotacao extends javax.swing.JFrame {
             .addGap(0, 50, Short.MAX_VALUE)
         );
 
-        getContentPane().add(pnCima, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 410, 400, -1));
+        getContentPane().add(pnCima, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 360, 400, -1));
 
         pnBaixo.setBackground(new java.awt.Color(153, 0, 51));
 
@@ -79,7 +81,7 @@ public class TelaVotacao extends javax.swing.JFrame {
 
         jLabel3.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         jLabel3.setText("Cargo");
-        pnConteudo.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 80, 30));
+        pnConteudo.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 80, 30));
 
         jLabel1.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         jLabel1.setText("Data");
@@ -102,7 +104,6 @@ public class TelaVotacao extends javax.swing.JFrame {
         txtMV.setColumns(20);
         txtMV.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         txtMV.setRows(5);
-        txtMV.setText("PLACEHOLDER\n");
         jScrollPane1.setViewportView(txtMV);
 
         pnConteudo.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 70, 260, -1));
@@ -124,13 +125,17 @@ public class TelaVotacao extends javax.swing.JFrame {
                 btnCadActionPerformed(evt);
             }
         });
-        pnConteudo.add(btnCad, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 310, 110, 30));
+        pnConteudo.add(btnCad, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 250, 110, 30));
 
         txtCargo.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        txtCargo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        pnConteudo.add(txtCargo, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 180, 110, 30));
+        txtCargo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCargoActionPerformed(evt);
+            }
+        });
+        pnConteudo.add(txtCargo, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 190, 260, 30));
 
-        getContentPane().add(pnConteudo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 400, 360));
+        getContentPane().add(pnConteudo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 400, 310));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -140,8 +145,13 @@ public class TelaVotacao extends javax.swing.JFrame {
     }//GEN-LAST:event_txtDataActionPerformed
 
     private void btnCadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadActionPerformed
-        // TODO add your handling code here:
+        LocalDate a = java.time.LocalDate.now(); 
+        txtMV.setText(String.valueOf(a.getDayOfYear()) + String.valueOf(a.getYear()) + String.valueOf(a.getMonthValue()));
     }//GEN-LAST:event_btnCadActionPerformed
+
+    private void txtCargoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCargoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCargoActionPerformed
     
     
     
@@ -190,7 +200,7 @@ public class TelaVotacao extends javax.swing.JFrame {
     private javax.swing.JPanel pnBaixo;
     private javax.swing.JPanel pnCima;
     private javax.swing.JPanel pnConteudo;
-    private javax.swing.JComboBox<String> txtCargo;
+    private javax.swing.JTextField txtCargo;
     private javax.swing.JFormattedTextField txtData;
     private javax.swing.JTextArea txtMV;
     // End of variables declaration//GEN-END:variables

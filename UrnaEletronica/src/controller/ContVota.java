@@ -5,10 +5,14 @@
  */
 package controller;
 
+import model.Votacao;
+
 /**
  *
  * @author felip
  */
 public class ContVota {
-    
+    public ContVota (String data, String motivacao, String cargo){
+        Votacao v = new Votacao(data, motivacao, cargo);
+    }
 }

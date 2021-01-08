@@ -10,5 +10,10 @@ package model;
  * @author felip
  */
 public class Eleitor {
-    
+    public static String nome, cpf, data_nasc;
+    public Eleitor (String nome, String cpf, String data) {
+        this.nome = nome;
+        this.cpf = cpf;
+        this.data_nasc = data;
+    }
 }

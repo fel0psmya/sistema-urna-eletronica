@@ -37,9 +37,9 @@ public class Banco {
     public boolean Cadastrar (Candidato candidato) {
         try {
             conectar();
-            stmt = conn.createStatement();
+            stmt = conn.createStatement();            
             stmt.executeUpdate("INSERT into candidato values (default, '"+ Candidato.nome +"','"
-            + Candidato.partido +"','"+ Candidato.numero +"','"+ Candidato.img +"')");
+            + Candidato.partido +"','"+ Candidato.numero +"','"+ Candidato.img.replace("\\", "-") +"')");
             JOptionPane.showMessageDialog(null, "Cadastrado com sucesso! :D", "Show!", JOptionPane.INFORMATION_MESSAGE);
             desconectar();
             return true;
@@ -48,11 +48,23 @@ public class Banco {
             desconectar();
             return false;
         }
-        
     }
     
+     /* ================== ELEITOR ================== */
     public boolean Cadastrar (Eleitor eleitor) {
-        return true;
+         try {
+            conectar();
+            stmt = conn.createStatement();
+            stmt.executeUpdate("INSERT into eleitor values (default, '"+ Eleitor.nome +"','"
+            + Eleitor.cpf +"','"+ Eleitor.data_nasc +"')");
+            JOptionPane.showMessageDialog(null, "Cadastrado com sucesso! :D", "Show!", JOptionPane.INFORMATION_MESSAGE);
+            desconectar();
+            return true;
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "ERRO: " + e, "Falha ao cadastrar", JOptionPane.ERROR_MESSAGE);
+            desconectar();
+            return false;
+        }
     }
     
     public boolean Cadastrar (Votacao candidato) {

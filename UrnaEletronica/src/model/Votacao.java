@@ -10,5 +10,12 @@ package model;
  * @author felip
  */
 public class Votacao {
-    
+    public static String data, motivacao, cargo;
+    public Votacao (String data, String motivacao, String cargo) {
+        this.data = data;
+        this.motivacao = motivacao;
+        this.cargo = cargo;
+        
+        
+    }
 }
