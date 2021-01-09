@@ -5,7 +5,7 @@
  */
 package controller;
 
-import model.Votacao;
+import model.Banco;
 
 /**
  *
@@ -13,6 +13,7 @@ import model.Votacao;
  */
 public class ContVota {
     public ContVota (String data, String motivacao, String cargo){
-        Votacao v = new Votacao(data, motivacao, cargo);
+        Banco b = new Banco ();
+        b.pegarDados(data, motivacao, cargo);
     }
 }

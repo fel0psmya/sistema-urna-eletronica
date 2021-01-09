@@ -5,6 +5,7 @@
  */
 package views;
 
+import controller.ContVota;
 import java.time.LocalDate;
 
 /**
@@ -119,13 +120,13 @@ public class TelaVotacao extends javax.swing.JFrame {
         btnCad.setBackground(new java.awt.Color(153, 0, 51));
         btnCad.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         btnCad.setForeground(new java.awt.Color(255, 255, 255));
-        btnCad.setText("Cadastrar");
+        btnCad.setText("Iniciar votação");
         btnCad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCadActionPerformed(evt);
             }
         });
-        pnConteudo.add(btnCad, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 250, 110, 30));
+        pnConteudo.add(btnCad, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 250, 140, 30));
 
         txtCargo.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         txtCargo.addActionListener(new java.awt.event.ActionListener() {
@@ -145,8 +146,7 @@ public class TelaVotacao extends javax.swing.JFrame {
     }//GEN-LAST:event_txtDataActionPerformed
 
     private void btnCadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadActionPerformed
-        LocalDate a = java.time.LocalDate.now(); 
-        txtMV.setText(String.valueOf(a.getDayOfYear()) + String.valueOf(a.getYear()) + String.valueOf(a.getMonthValue()));
+        ContVota c = new ContVota(txtData.getText(), txtMV.getText(), txtCargo.getText());
     }//GEN-LAST:event_btnCadActionPerformed
 
     private void txtCargoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCargoActionPerformed

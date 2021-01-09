@@ -8,10 +8,11 @@ package views;
 import java.applet.Applet;
 import java.applet.AudioClip;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
-import model.Votacao;
+import model.Banco;
 
 /**
  *
@@ -25,6 +26,7 @@ public class TelaUrna extends javax.swing.JFrame {
     public TelaUrna() {
         initComponents();
         pnlFim.setVisible(false);
+        lblId.setText("" + b.numE);
     }
 
     /**
@@ -71,7 +73,6 @@ public class TelaUrna extends javax.swing.JFrame {
         pnlConfirma = new javax.swing.JLabel();
         pnTela = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        lblCargo = new javax.swing.JLabel();
         lblNome = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         lblPartido = new javax.swing.JLabel();
@@ -83,6 +84,8 @@ public class TelaUrna extends javax.swing.JFrame {
         jPanel4 = new javax.swing.JPanel();
         pnImagem = new javax.swing.JPanel();
         lblIcone = new javax.swing.JLabel();
+        lblIdCand = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
         lblId = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
@@ -91,6 +94,7 @@ public class TelaUrna extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         pnlFim = new javax.swing.JPanel();
         lblCargo1 = new javax.swing.JLabel();
+        lblCargo = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
 
@@ -616,9 +620,6 @@ public class TelaUrna extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
         jLabel1.setText("SEU VOTO PARA");
 
-        lblCargo.setFont(new java.awt.Font("Arial", 0, 22)); // NOI18N
-        lblCargo.setText("Cargo Show");
-
         lblNome.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
 
         jLabel9.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
@@ -671,13 +672,26 @@ public class TelaUrna extends javax.swing.JFrame {
                 .addGap(0, 2, Short.MAX_VALUE))
         );
 
+        lblIdCand.setFont(new java.awt.Font("Arial", 0, 26)); // NOI18N
+        lblIdCand.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblIdCand.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        jLabel16.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
+        jLabel16.setText("<html>Nº do <br>Candidato</html>");
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap(21, Short.MAX_VALUE)
-                .addComponent(pnImagem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(pnImagem, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(14, 14, 14)
+                        .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lblIdCand, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
@@ -685,7 +699,11 @@ public class TelaUrna extends javax.swing.JFrame {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(pnImagem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(75, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel16)
+                    .addComponent(lblIdCand, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         lblId.setFont(new java.awt.Font("Arial", 0, 26)); // NOI18N
@@ -719,6 +737,8 @@ public class TelaUrna extends javax.swing.JFrame {
         lblCargo1.setText("FIM");
         pnlFim.add(lblCargo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, -1, -1));
 
+        lblCargo.setFont(new java.awt.Font("Arial", 0, 22)); // NOI18N
+
         javax.swing.GroupLayout pnTelaLayout = new javax.swing.GroupLayout(pnTela);
         pnTela.setLayout(pnTelaLayout);
         pnTelaLayout.setHorizontalGroup(
@@ -727,14 +747,6 @@ public class TelaUrna extends javax.swing.JFrame {
             .addGroup(pnTelaLayout.createSequentialGroup()
                 .addGroup(pnTelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnTelaLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(lblCargo)
-                        .addGap(174, 174, 174))
-                    .addGroup(pnTelaLayout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(pnTelaLayout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(pnTelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(pnTelaLayout.createSequentialGroup()
@@ -751,7 +763,15 @@ public class TelaUrna extends javax.swing.JFrame {
                                     .addComponent(lblNome, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(pnlFim, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(100, 100, 100)))
+                        .addGap(104, 104, 104))
+                    .addGroup(pnTelaLayout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnTelaLayout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(lblCargo, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(154, 154, 154)))
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(pnTelaLayout.createSequentialGroup()
                 .addContainerGap()
@@ -788,11 +808,11 @@ public class TelaUrna extends javax.swing.JFrame {
                                 .addComponent(jLabel12)
                                 .addGap(65, 65, 65))
                             .addGroup(pnTelaLayout.createSequentialGroup()
-                                .addGap(22, 22, 22)
-                                .addComponent(lblCargo)
+                                .addGap(19, 19, 19)
+                                .addComponent(lblCargo, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGroup(pnTelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(pnTelaLayout.createSequentialGroup()
-                                        .addGap(29, 29, 29)
+                                        .addGap(32, 32, 32)
                                         .addGroup(pnTelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                             .addGroup(pnTelaLayout.createSequentialGroup()
                                                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -805,9 +825,9 @@ public class TelaUrna extends javax.swing.JFrame {
                                         .addGap(18, 18, 18)
                                         .addComponent(lblPartido, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(pnTelaLayout.createSequentialGroup()
-                                        .addGap(69, 69, 69)
+                                        .addGap(72, 72, 72)
                                         .addComponent(pnlFim, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)))))
                 .addComponent(pnInfo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel11)
@@ -831,17 +851,24 @@ public class TelaUrna extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    public static String data, motivacao, cargo;
+    Banco b = new Banco ();
     public void tocarAudio(String nomeAudio) {
         URL url = getClass().getResource(nomeAudio + ".wav");
         AudioClip audio = Applet.newAudioClip(url);
         audio.play();
     }    
     
+    public void verificarNum () {
+        if (!lblNum1.getText().equals("") && !lblNum2.getText().equals("")) {
+            b.mostrarCandidato();
+        }
+    }
+    
     private void pn1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pn1MouseClicked
 
     }//GEN-LAST:event_pn1MouseClicked
-
+    
     private void pnl1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnl1MouseClicked
        String l1 = lblNum1.getText();
        String l2 = lblNum2.getText();
@@ -854,6 +881,7 @@ public class TelaUrna extends javax.swing.JFrame {
            JOptionPane.showMessageDialog(null, "Atenção: Aperte CORRIGE para corrigir seu voto", "Atenção!" , 3);
        }
        
+       verificarNum();
        tocarAudio("somTecla");
     }//GEN-LAST:event_pnl1MouseClicked
 
@@ -868,6 +896,8 @@ public class TelaUrna extends javax.swing.JFrame {
        } else if (!l1.equals("") && !l2.equals("")) {
            JOptionPane.showMessageDialog(null, "Atenção: Aperte CORRIGE para corrigir seu voto", "Atenção!" , 3);
        } 
+       
+       verificarNum();
        tocarAudio("somTecla");
     }//GEN-LAST:event_pnl2MouseClicked
 
@@ -882,6 +912,8 @@ public class TelaUrna extends javax.swing.JFrame {
        } else if (!l1.equals("") && !l2.equals("")) {
            JOptionPane.showMessageDialog(null, "Atenção: Aperte CORRIGE para corrigir seu voto", "Atenção!" , 3);
        } 
+       
+       verificarNum();
        tocarAudio("somTecla");
     }//GEN-LAST:event_pnl3MouseClicked
 
@@ -896,6 +928,8 @@ public class TelaUrna extends javax.swing.JFrame {
        } else if (!l1.equals("") && !l2.equals("")) {
            JOptionPane.showMessageDialog(null, "Atenção: Aperte CORRIGE para corrigir seu voto", "Atenção!" , 3);
        } 
+       
+       verificarNum();
        tocarAudio("somTecla");
     }//GEN-LAST:event_pnl4MouseClicked
 
@@ -910,6 +944,8 @@ public class TelaUrna extends javax.swing.JFrame {
        } else if (!l1.equals("") && !l2.equals("")) {
            JOptionPane.showMessageDialog(null, "Atenção: Aperte CORRIGE para corrigir seu voto", "Atenção!" , 3);
        } 
+       
+       verificarNum();
        tocarAudio("somTecla");
     }//GEN-LAST:event_pnl5MouseClicked
 
@@ -924,6 +960,8 @@ public class TelaUrna extends javax.swing.JFrame {
        } else if (!l1.equals("") && !l2.equals("")) {
            JOptionPane.showMessageDialog(null, "Atenção: Aperte CORRIGE para corrigir seu voto", "Atenção!" , 3);
        } 
+       
+       verificarNum();
        tocarAudio("somTecla");
     }//GEN-LAST:event_pnl6MouseClicked
 
@@ -938,6 +976,8 @@ public class TelaUrna extends javax.swing.JFrame {
        } else if (!l1.equals("") && !l2.equals("")) {
            JOptionPane.showMessageDialog(null, "Atenção: Aperte CORRIGE para corrigir seu voto", "Atenção!" , 3);
        } 
+       
+       verificarNum();
        tocarAudio("somTecla");
     }//GEN-LAST:event_pnl7MouseClicked
 
@@ -952,6 +992,8 @@ public class TelaUrna extends javax.swing.JFrame {
        } else if (!l1.equals("") && !l2.equals("")) {
            JOptionPane.showMessageDialog(null, "Atenção: Aperte CORRIGE para corrigir seu voto", "Atenção!" , 3);
        }
+       
+       verificarNum();
        tocarAudio("somTecla");
     }//GEN-LAST:event_pnl8MouseClicked
 
@@ -966,6 +1008,8 @@ public class TelaUrna extends javax.swing.JFrame {
        } else if (!l1.equals("") && !l2.equals("")) {
            JOptionPane.showMessageDialog(null, "Atenção: Aperte CORRIGE para corrigir seu voto", "Atenção!" , 3);
        }
+       
+       verificarNum();
        tocarAudio("somTecla");
     }//GEN-LAST:event_pnl9MouseClicked
 
@@ -980,6 +1024,8 @@ public class TelaUrna extends javax.swing.JFrame {
        } else if (!l1.equals("") && !l2.equals("")) {
            JOptionPane.showMessageDialog(null, "Atenção: Aperte CORRIGE para corrigir seu voto", "Atenção!" , 3);
        }
+      
+       verificarNum();
        tocarAudio("somTecla");
     }//GEN-LAST:event_pnl0MouseClicked
 
@@ -992,6 +1038,7 @@ public class TelaUrna extends javax.swing.JFrame {
         lblNum2.setText("");
         lblNome.setText("");
         lblPartido.setText("");
+        lblIdCand.setText("");
         lblIcone.setIcon(null);
         
         pnCorrige.setBorder(null);
@@ -1087,6 +1134,7 @@ public class TelaUrna extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel30;
@@ -1097,14 +1145,15 @@ public class TelaUrna extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JLabel lblCargo;
+    public static javax.swing.JLabel lblCargo;
     private javax.swing.JLabel lblCargo1;
-    private javax.swing.JLabel lblIcone;
-    private javax.swing.JLabel lblId;
-    private javax.swing.JLabel lblNome;
-    private javax.swing.JLabel lblNum1;
-    private javax.swing.JLabel lblNum2;
-    private javax.swing.JLabel lblPartido;
+    public static javax.swing.JLabel lblIcone;
+    public static javax.swing.JLabel lblId;
+    public static javax.swing.JLabel lblIdCand;
+    public static javax.swing.JLabel lblNome;
+    public static javax.swing.JLabel lblNum1;
+    public static javax.swing.JLabel lblNum2;
+    public static javax.swing.JLabel lblPartido;
     private javax.swing.JPanel pn0;
     private javax.swing.JPanel pn1;
     private javax.swing.JPanel pn2;

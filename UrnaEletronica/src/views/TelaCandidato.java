@@ -50,7 +50,7 @@ public class TelaCandidato extends javax.swing.JFrame {
         txtPart = new javax.swing.JTextField();
         txtNum = new javax.swing.JTextField();
         btnCad = new javax.swing.JButton();
-        txtPart1 = new javax.swing.JTextField();
+        txtCargo = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
 
         jList1.setModel(new javax.swing.AbstractListModel<String>() {
@@ -156,10 +156,10 @@ public class TelaCandidato extends javax.swing.JFrame {
         });
         pnBaixo.add(btnCad, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 200, 110, 30));
 
-        txtPart1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        txtPart1.setToolTipText("");
-        txtPart1.setPreferredSize(null);
-        pnBaixo.add(txtPart1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 150, 180, -1));
+        txtCargo.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        txtCargo.setToolTipText("");
+        txtCargo.setPreferredSize(null);
+        pnBaixo.add(txtCargo, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 150, 180, -1));
 
         jLabel6.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel6.setText("<html>Cargo <br> pretendido </html>");
@@ -191,7 +191,7 @@ public class TelaCandidato extends javax.swing.JFrame {
 
     private void btnCadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadActionPerformed
             ContCand c = new ContCand(txtNome.getText(), txtPart.getText(), txtNum.getText(), 
-            txtImg.getText());
+            txtImg.getText(), txtCargo.getText());
             // Envia os valores para o controlador
             
     }//GEN-LAST:event_btnCadActionPerformed
@@ -244,10 +244,10 @@ public class TelaCandidato extends javax.swing.JFrame {
     private javax.swing.JPanel pnBaixo;
     private javax.swing.JPanel pnCima;
     private javax.swing.JPanel pnFoto;
+    private javax.swing.JTextField txtCargo;
     private javax.swing.JTextField txtImg;
     private javax.swing.JTextField txtNome;
     private javax.swing.JTextField txtNum;
     private javax.swing.JTextField txtPart;
-    private javax.swing.JTextField txtPart1;
     // End of variables declaration//GEN-END:variables
 }
