@@ -11,6 +11,9 @@
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="itemNV">
               <Properties>
+                <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
+                  <KeyStroke key="Alt+V"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Nova vota&#xe7;&#xe3;o"/>
               </Properties>
               <Events>
@@ -27,6 +30,9 @@
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="itemCand">
               <Properties>
+                <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
+                  <KeyStroke key="Alt+C"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Novo candidato"/>
               </Properties>
               <Events>
@@ -35,6 +41,9 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="itemCarg">
               <Properties>
+                <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
+                  <KeyStroke key="Shift+Alt+C"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Novo cargo"/>
               </Properties>
               <Events>
@@ -50,6 +59,9 @@
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="itemE">
               <Properties>
+                <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
+                  <KeyStroke key="Alt+E"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Novo eleitor"/>
               </Properties>
               <Events>

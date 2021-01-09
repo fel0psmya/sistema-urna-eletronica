@@ -182,6 +182,7 @@ public class TelaInicial extends javax.swing.JFrame {
 
         menuV.setText("Novo");
 
+        itemNV.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_V, java.awt.event.InputEvent.ALT_MASK));
         itemNV.setText("Nova votação");
         itemNV.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -199,6 +200,7 @@ public class TelaInicial extends javax.swing.JFrame {
 
         menuC.setText("Candidato");
 
+        itemCand.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.ALT_MASK));
         itemCand.setText("Novo candidato");
         itemCand.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -207,6 +209,7 @@ public class TelaInicial extends javax.swing.JFrame {
         });
         menuC.add(itemCand);
 
+        itemCarg.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.ALT_MASK | java.awt.event.InputEvent.SHIFT_MASK));
         itemCarg.setText("Novo cargo");
         itemCarg.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -219,6 +222,7 @@ public class TelaInicial extends javax.swing.JFrame {
 
         menuE.setText("Eleitor");
 
+        itemE.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.ALT_MASK));
         itemE.setText("Novo eleitor");
         itemE.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

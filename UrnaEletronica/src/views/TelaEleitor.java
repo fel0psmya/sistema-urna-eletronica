@@ -84,7 +84,7 @@ public class TelaEleitor extends javax.swing.JFrame {
         jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 65, -1, -1));
 
         txtNome.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        txtNome.setToolTipText("");
+        txtNome.setToolTipText("Digite seu nome");
         txtNome.setPreferredSize(null);
         jPanel3.add(txtNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 64, 330, -1));
 
@@ -93,7 +93,7 @@ public class TelaEleitor extends javax.swing.JFrame {
         jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 104, -1, 20));
 
         txtCPF.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        txtCPF.setToolTipText("");
+        txtCPF.setToolTipText("Digite apenas números");
         txtCPF.setPreferredSize(null);
         jPanel3.add(txtCPF, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 104, 330, -1));
 

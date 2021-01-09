@@ -64,7 +64,6 @@ public class TelaCandidato extends javax.swing.JFrame {
         setTitle("Cadastro de Candidato");
         setBackground(new java.awt.Color(255, 255, 255));
         setMinimumSize(new java.awt.Dimension(450, 500));
-        setPreferredSize(new java.awt.Dimension(450, 520));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -131,17 +130,17 @@ public class TelaCandidato extends javax.swing.JFrame {
         pnBaixo.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, -1, 20));
 
         txtNome.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        txtNome.setToolTipText("");
+        txtNome.setToolTipText("Digite seu nome");
         txtNome.setPreferredSize(null);
         pnBaixo.add(txtNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 30, 330, -1));
 
         txtPart.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        txtPart.setToolTipText("");
+        txtPart.setToolTipText("Digite seu partido ");
         txtPart.setPreferredSize(null);
         pnBaixo.add(txtPart, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 70, 330, -1));
 
         txtNum.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        txtNum.setToolTipText("");
+        txtNum.setToolTipText("Digite o número de seu partido");
         txtNum.setPreferredSize(null);
         pnBaixo.add(txtNum, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 110, 55, -1));
 
@@ -157,7 +156,7 @@ public class TelaCandidato extends javax.swing.JFrame {
         pnBaixo.add(btnCad, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 200, 110, 30));
 
         txtCargo.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        txtCargo.setToolTipText("");
+        txtCargo.setToolTipText("Digite seu cargo pretendido");
         txtCargo.setPreferredSize(null);
         pnBaixo.add(txtCargo, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 150, 180, -1));
 

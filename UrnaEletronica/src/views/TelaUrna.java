@@ -72,28 +72,28 @@ public class TelaUrna extends javax.swing.JFrame {
         pnConfirma = new javax.swing.JPanel();
         pnlConfirma = new javax.swing.JLabel();
         pnTela = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        lblVotoPara = new javax.swing.JLabel();
         lblNome = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
+        lblTituloNome = new javax.swing.JLabel();
         lblPartido = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         pnInfo = new javax.swing.JPanel();
-        jLabel12 = new javax.swing.JLabel();
+        lblTituloPartido = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
-        jPanel4 = new javax.swing.JPanel();
+        pnImg = new javax.swing.JPanel();
         pnImagem = new javax.swing.JPanel();
         lblIcone = new javax.swing.JLabel();
         lblIdCand = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         lblId = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
+        pnNumeros = new javax.swing.JPanel();
         lblNum1 = new javax.swing.JLabel();
         lblNum2 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
+        lblTituloNum = new javax.swing.JLabel();
         pnlFim = new javax.swing.JPanel();
-        lblCargo1 = new javax.swing.JLabel();
+        lblFim = new javax.swing.JLabel();
         lblCargo = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
@@ -113,7 +113,7 @@ public class TelaUrna extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Urna Eletrônica");
-        setMinimumSize(new java.awt.Dimension(1040, 560));
+        setMinimumSize(new java.awt.Dimension(1040, 500));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -165,6 +165,7 @@ public class TelaUrna extends javax.swing.JFrame {
 
         pn1.setBackground(new java.awt.Color(45, 45, 45));
         pn1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        pn1.setToolTipText("1");
         pn1.setPreferredSize(new java.awt.Dimension(60, 53));
         pn1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -176,7 +177,7 @@ public class TelaUrna extends javax.swing.JFrame {
         pnl1.setForeground(new java.awt.Color(255, 255, 255));
         pnl1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         pnl1.setText("1");
-        pnl1.setToolTipText("");
+        pnl1.setToolTipText("1");
         pnl1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 pnl1MouseClicked(evt);
@@ -199,13 +200,14 @@ public class TelaUrna extends javax.swing.JFrame {
 
         pn2.setBackground(new java.awt.Color(45, 45, 45));
         pn2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        pn2.setToolTipText("2");
         pn2.setPreferredSize(new java.awt.Dimension(60, 53));
 
         pnl2.setFont(new java.awt.Font("Arial", 1, 26)); // NOI18N
         pnl2.setForeground(new java.awt.Color(255, 255, 255));
         pnl2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         pnl2.setText("2");
-        pnl2.setToolTipText("");
+        pnl2.setToolTipText("2");
         pnl2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 pnl2MouseClicked(evt);
@@ -228,13 +230,14 @@ public class TelaUrna extends javax.swing.JFrame {
 
         pn3.setBackground(new java.awt.Color(45, 45, 45));
         pn3.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        pn3.setToolTipText("3");
         pn3.setPreferredSize(new java.awt.Dimension(60, 53));
 
         pnl3.setFont(new java.awt.Font("Arial", 1, 26)); // NOI18N
         pnl3.setForeground(new java.awt.Color(255, 255, 255));
         pnl3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         pnl3.setText("3");
-        pnl3.setToolTipText("");
+        pnl3.setToolTipText("3");
         pnl3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 pnl3MouseClicked(evt);
@@ -257,13 +260,14 @@ public class TelaUrna extends javax.swing.JFrame {
 
         pn4.setBackground(new java.awt.Color(45, 45, 45));
         pn4.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        pn4.setToolTipText("4");
         pn4.setPreferredSize(new java.awt.Dimension(60, 53));
 
         pnl4.setFont(new java.awt.Font("Arial", 1, 26)); // NOI18N
         pnl4.setForeground(new java.awt.Color(255, 255, 255));
         pnl4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         pnl4.setText("4");
-        pnl4.setToolTipText("");
+        pnl4.setToolTipText("4");
         pnl4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 pnl4MouseClicked(evt);
@@ -286,13 +290,14 @@ public class TelaUrna extends javax.swing.JFrame {
 
         pn5.setBackground(new java.awt.Color(45, 45, 45));
         pn5.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        pn5.setToolTipText("5");
         pn5.setPreferredSize(new java.awt.Dimension(60, 53));
 
         pnl5.setFont(new java.awt.Font("Arial", 1, 26)); // NOI18N
         pnl5.setForeground(new java.awt.Color(255, 255, 255));
         pnl5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         pnl5.setText("5");
-        pnl5.setToolTipText("");
+        pnl5.setToolTipText("5");
         pnl5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 pnl5MouseClicked(evt);
@@ -315,13 +320,14 @@ public class TelaUrna extends javax.swing.JFrame {
 
         pn6.setBackground(new java.awt.Color(45, 45, 45));
         pn6.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        pn6.setToolTipText("6");
         pn6.setPreferredSize(new java.awt.Dimension(60, 53));
 
         pnl6.setFont(new java.awt.Font("Arial", 1, 26)); // NOI18N
         pnl6.setForeground(new java.awt.Color(255, 255, 255));
         pnl6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         pnl6.setText("6");
-        pnl6.setToolTipText("");
+        pnl6.setToolTipText("6");
         pnl6.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 pnl6MouseClicked(evt);
@@ -344,13 +350,14 @@ public class TelaUrna extends javax.swing.JFrame {
 
         pn7.setBackground(new java.awt.Color(45, 45, 45));
         pn7.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        pn7.setToolTipText("7");
         pn7.setPreferredSize(new java.awt.Dimension(60, 53));
 
         pnl7.setFont(new java.awt.Font("Arial", 1, 26)); // NOI18N
         pnl7.setForeground(new java.awt.Color(255, 255, 255));
         pnl7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         pnl7.setText("7");
-        pnl7.setToolTipText("");
+        pnl7.setToolTipText("7");
         pnl7.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 pnl7MouseClicked(evt);
@@ -373,13 +380,14 @@ public class TelaUrna extends javax.swing.JFrame {
 
         pn8.setBackground(new java.awt.Color(45, 45, 45));
         pn8.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        pn8.setToolTipText("8");
         pn8.setPreferredSize(new java.awt.Dimension(60, 53));
 
         pnl8.setFont(new java.awt.Font("Arial", 1, 26)); // NOI18N
         pnl8.setForeground(new java.awt.Color(255, 255, 255));
         pnl8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         pnl8.setText("8");
-        pnl8.setToolTipText("");
+        pnl8.setToolTipText("8");
         pnl8.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 pnl8MouseClicked(evt);
@@ -402,13 +410,14 @@ public class TelaUrna extends javax.swing.JFrame {
 
         pn9.setBackground(new java.awt.Color(45, 45, 45));
         pn9.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        pn9.setToolTipText("9");
         pn9.setPreferredSize(new java.awt.Dimension(60, 53));
 
         pnl9.setFont(new java.awt.Font("Arial", 1, 26)); // NOI18N
         pnl9.setForeground(new java.awt.Color(255, 255, 255));
         pnl9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         pnl9.setText("9");
-        pnl9.setToolTipText("");
+        pnl9.setToolTipText("9");
         pnl9.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 pnl9MouseClicked(evt);
@@ -431,13 +440,14 @@ public class TelaUrna extends javax.swing.JFrame {
 
         pn0.setBackground(new java.awt.Color(45, 45, 45));
         pn0.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        pn0.setToolTipText("0");
         pn0.setPreferredSize(new java.awt.Dimension(60, 53));
 
         pnl0.setFont(new java.awt.Font("Arial", 1, 26)); // NOI18N
         pnl0.setForeground(new java.awt.Color(255, 255, 255));
         pnl0.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         pnl0.setText("0");
-        pnl0.setToolTipText("");
+        pnl0.setToolTipText("0");
         pnl0.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 pnl0MouseClicked(evt);
@@ -460,11 +470,13 @@ public class TelaUrna extends javax.swing.JFrame {
 
         pnBranco.setBackground(new java.awt.Color(255, 255, 255));
         pnBranco.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        pnBranco.setToolTipText("Voto em branco");
         pnBranco.setPreferredSize(new java.awt.Dimension(53, 53));
 
         pnlBranco.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         pnlBranco.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         pnlBranco.setText("BRANCO");
+        pnlBranco.setToolTipText("Votar em branco");
         pnlBranco.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 pnlBrancoMouseClicked(evt);
@@ -487,11 +499,14 @@ public class TelaUrna extends javax.swing.JFrame {
 
         pnCorrige.setBackground(new java.awt.Color(204, 0, 0));
         pnCorrige.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        pnCorrige.setToolTipText("Corrigir voto");
+        pnCorrige.setAutoscrolls(true);
         pnCorrige.setPreferredSize(new java.awt.Dimension(53, 53));
 
         pnlCorrige.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         pnlCorrige.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         pnlCorrige.setText("CORRIGE");
+        pnlCorrige.setToolTipText("Corrigir voto");
         pnlCorrige.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 pnlCorrigeMouseClicked(evt);
@@ -517,11 +532,13 @@ public class TelaUrna extends javax.swing.JFrame {
 
         pnConfirma.setBackground(new java.awt.Color(0, 166, 55));
         pnConfirma.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        pnConfirma.setToolTipText("Confirmar voto");
         pnConfirma.setPreferredSize(new java.awt.Dimension(53, 53));
 
         pnlConfirma.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
         pnlConfirma.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         pnlConfirma.setText("CONFIRMA");
+        pnlConfirma.setToolTipText("Confirmar voto");
         pnlConfirma.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 pnlConfirmaMouseClicked(evt);
@@ -617,13 +634,13 @@ public class TelaUrna extends javax.swing.JFrame {
         pnTela.setBackground(new java.awt.Color(255, 255, 255));
         pnTela.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jLabel1.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
-        jLabel1.setText("SEU VOTO PARA");
+        lblVotoPara.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
+        lblVotoPara.setText("SEU VOTO PARA");
 
         lblNome.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
 
-        jLabel9.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
-        jLabel9.setText("Nome:");
+        lblTituloNome.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
+        lblTituloNome.setText("Nome:");
 
         lblPartido.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
 
@@ -643,8 +660,8 @@ public class TelaUrna extends javax.swing.JFrame {
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
-        jLabel12.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
-        jLabel12.setText("Partido:");
+        lblTituloPartido.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
+        lblTituloPartido.setText("Partido:");
 
         jLabel13.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
         jLabel13.setText("CONFIRMA para CONFIRMAR este voto ");
@@ -652,24 +669,23 @@ public class TelaUrna extends javax.swing.JFrame {
         jLabel14.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
         jLabel14.setText("CORRIGE para CORRIGIR este voto");
 
-        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
+        pnImg.setBackground(new java.awt.Color(255, 255, 255));
 
+        pnImagem.setBackground(new java.awt.Color(245, 245, 245));
         pnImagem.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         pnImagem.setPreferredSize(new java.awt.Dimension(154, 204));
+
+        lblIcone.setBackground(new java.awt.Color(255, 255, 255));
 
         javax.swing.GroupLayout pnImagemLayout = new javax.swing.GroupLayout(pnImagem);
         pnImagem.setLayout(pnImagemLayout);
         pnImagemLayout.setHorizontalGroup(
             pnImagemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnImagemLayout.createSequentialGroup()
-                .addComponent(lblIcone, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 2, Short.MAX_VALUE))
+            .addComponent(lblIcone, javax.swing.GroupLayout.DEFAULT_SIZE, 152, Short.MAX_VALUE)
         );
         pnImagemLayout.setVerticalGroup(
             pnImagemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnImagemLayout.createSequentialGroup()
-                .addComponent(lblIcone, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 2, Short.MAX_VALUE))
+            .addComponent(lblIcone, javax.swing.GroupLayout.DEFAULT_SIZE, 202, Short.MAX_VALUE)
         );
 
         lblIdCand.setFont(new java.awt.Font("Arial", 0, 26)); // NOI18N
@@ -679,31 +695,31 @@ public class TelaUrna extends javax.swing.JFrame {
         jLabel16.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
         jLabel16.setText("<html>Nº do <br>Candidato</html>");
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
+        javax.swing.GroupLayout pnImgLayout = new javax.swing.GroupLayout(pnImg);
+        pnImg.setLayout(pnImgLayout);
+        pnImgLayout.setHorizontalGroup(
+            pnImgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnImgLayout.createSequentialGroup()
                 .addContainerGap(21, Short.MAX_VALUE)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(pnImgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(pnImagem, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
+                    .addGroup(pnImgLayout.createSequentialGroup()
                         .addGap(14, 14, 14)
                         .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(lblIdCand, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
+        pnImgLayout.setVerticalGroup(
+            pnImgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnImgLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(pnImagem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(pnImgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel16)
                     .addComponent(lblIdCand, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(16, Short.MAX_VALUE))
         );
 
         lblId.setFont(new java.awt.Font("Arial", 0, 26)); // NOI18N
@@ -714,28 +730,28 @@ public class TelaUrna extends javax.swing.JFrame {
         jLabel15.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
         jLabel15.setText("Nº do Eleitor:");
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        pnNumeros.setBackground(new java.awt.Color(255, 255, 255));
+        pnNumeros.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblNum1.setFont(new java.awt.Font("Arial", 0, 26)); // NOI18N
         lblNum1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblNum1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel1.add(lblNum1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 31, 41));
+        pnNumeros.add(lblNum1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 31, 41));
 
         lblNum2.setFont(new java.awt.Font("Arial", 0, 26)); // NOI18N
         lblNum2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblNum2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel1.add(lblNum2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 0, 31, 41));
+        pnNumeros.add(lblNum2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 0, 31, 41));
 
-        jLabel7.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
-        jLabel7.setText("Número:");
+        lblTituloNum.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
+        lblTituloNum.setText("Número:");
 
         pnlFim.setBackground(new java.awt.Color(255, 255, 255));
         pnlFim.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        lblCargo1.setFont(new java.awt.Font("Arial", 0, 48)); // NOI18N
-        lblCargo1.setText("FIM");
-        pnlFim.add(lblCargo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, -1, -1));
+        lblFim.setFont(new java.awt.Font("Arial", 0, 48)); // NOI18N
+        lblFim.setText("FIM");
+        pnlFim.add(lblFim, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         lblCargo.setFont(new java.awt.Font("Arial", 0, 22)); // NOI18N
 
@@ -745,34 +761,35 @@ public class TelaUrna extends javax.swing.JFrame {
             pnTelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(pnInfo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(pnTelaLayout.createSequentialGroup()
-                .addGroup(pnTelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnTelaLayout.createSequentialGroup()
+                .addGroup(pnTelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pnTelaLayout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(lblVotoPara)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(pnTelaLayout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(lblCargo, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(154, 154, 154))
+                    .addGroup(pnTelaLayout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(pnTelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(pnTelaLayout.createSequentialGroup()
-                                .addComponent(jLabel7)
+                                .addComponent(lblTituloNum)
                                 .addGap(18, 18, 18)
-                                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(pnNumeros, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGroup(pnTelaLayout.createSequentialGroup()
                                 .addGroup(pnTelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel9)
-                                    .addComponent(jLabel12))
+                                    .addComponent(lblTituloNome)
+                                    .addComponent(lblTituloPartido))
                                 .addGap(23, 23, 23)
                                 .addGroup(pnTelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lblPartido, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(lblNome, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(lblNome, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(lblPartido, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(40, 40, 40)))
                         .addComponent(pnlFim, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(104, 104, 104))
-                    .addGroup(pnTelaLayout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnTelaLayout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(lblCargo, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(154, 154, 154)))
-                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(34, 34, 34)))
+                .addComponent(pnImg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(pnTelaLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(pnTelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -797,37 +814,34 @@ public class TelaUrna extends javax.swing.JFrame {
             .addGroup(pnTelaLayout.createSequentialGroup()
                 .addGroup(pnTelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnTelaLayout.createSequentialGroup()
-                        .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(pnImg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
                     .addGroup(pnTelaLayout.createSequentialGroup()
                         .addGap(11, 11, 11)
-                        .addComponent(jLabel1)
+                        .addComponent(lblVotoPara)
+                        .addGap(19, 19, 19)
+                        .addComponent(lblCargo, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(pnTelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(pnTelaLayout.createSequentialGroup()
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnTelaLayout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel12)
-                                .addGap(65, 65, 65))
+                                .addComponent(pnlFim, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(86, 86, 86))
                             .addGroup(pnTelaLayout.createSequentialGroup()
-                                .addGap(19, 19, 19)
-                                .addComponent(lblCargo, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(pnTelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGap(32, 32, 32)
+                                .addGroup(pnTelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addGroup(pnTelaLayout.createSequentialGroup()
-                                        .addGap(32, 32, 32)
-                                        .addGroup(pnTelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addGroup(pnTelaLayout.createSequentialGroup()
-                                                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(18, 18, 18)
-                                                .addComponent(lblNome, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addGroup(pnTelaLayout.createSequentialGroup()
-                                                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(18, 18, 18)
-                                                .addComponent(jLabel9)))
+                                        .addComponent(pnNumeros, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(18, 18, 18)
-                                        .addComponent(lblPartido, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(lblNome, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(pnTelaLayout.createSequentialGroup()
-                                        .addGap(72, 72, 72)
-                                        .addComponent(pnlFim, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)))))
+                                        .addComponent(lblTituloNum, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(lblTituloNome)))
+                                .addGap(18, 18, 18)
+                                .addGroup(pnTelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(lblPartido, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(lblTituloPartido, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
                 .addComponent(pnInfo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel11)
@@ -844,8 +858,8 @@ public class TelaUrna extends javax.swing.JFrame {
         );
 
         jPanel2.add(pnTela, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, 660, 400));
-        jPanel2.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 530, 1010, 30));
-        jPanel2.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, 1010, 550));
+        jPanel2.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 530, 1010, 10));
+        jPanel2.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, 1010, 540));
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1100, 560));
 
@@ -1041,12 +1055,23 @@ public class TelaUrna extends javax.swing.JFrame {
         lblIdCand.setText("");
         lblIcone.setIcon(null);
         
-        pnCorrige.setBorder(null);
         tocarAudio("somTecla");
     }//GEN-LAST:event_pnlCorrigeMouseClicked
 
     private void pnlConfirmaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlConfirmaMouseClicked
-        pnConfirma.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        lblFim.setVisible(true);
+        pnInfo.setVisible(false);
+        pnImg.setVisible(false);
+        pnNumeros.setVisible(false);
+        lblNome.setVisible(false);
+        lblPartido.setVisible(false);
+        lblVotoPara.setVisible(false);
+        lblTituloNum.setVisible(false);
+        lblTituloNome.setVisible(false);
+        lblTituloPartido.setVisible(false);
+        
+        tocarAudio("somConfirma");
+        b.confirmarVoto();
     }//GEN-LAST:event_pnlConfirmaMouseClicked
 
     private void pnlCorrigeMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlCorrigeMouseExited
@@ -1128,9 +1153,7 @@ public class TelaUrna extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JInternalFrame jInternalFrame1;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
@@ -1138,15 +1161,11 @@ public class TelaUrna extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel30;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel4;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     public static javax.swing.JLabel lblCargo;
-    private javax.swing.JLabel lblCargo1;
+    public static javax.swing.JLabel lblFim;
     public static javax.swing.JLabel lblIcone;
     public static javax.swing.JLabel lblId;
     public static javax.swing.JLabel lblIdCand;
@@ -1154,6 +1173,10 @@ public class TelaUrna extends javax.swing.JFrame {
     public static javax.swing.JLabel lblNum1;
     public static javax.swing.JLabel lblNum2;
     public static javax.swing.JLabel lblPartido;
+    public static javax.swing.JLabel lblTituloNome;
+    public static javax.swing.JLabel lblTituloNum;
+    public static javax.swing.JLabel lblTituloPartido;
+    public static javax.swing.JLabel lblVotoPara;
     private javax.swing.JPanel pn0;
     private javax.swing.JPanel pn1;
     private javax.swing.JPanel pn2;
@@ -1168,7 +1191,9 @@ public class TelaUrna extends javax.swing.JFrame {
     private javax.swing.JPanel pnConfirma;
     private javax.swing.JPanel pnCorrige;
     private javax.swing.JPanel pnImagem;
-    private javax.swing.JPanel pnInfo;
+    public static javax.swing.JPanel pnImg;
+    public static javax.swing.JPanel pnInfo;
+    public static javax.swing.JPanel pnNumeros;
     private javax.swing.JPanel pnTela;
     private javax.swing.JLabel pnl0;
     private javax.swing.JLabel pnl1;

@@ -102,9 +102,12 @@ public class TelaVotacao extends javax.swing.JFrame {
         });
         pnConteudo.add(txtData, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 20, 130, -1));
 
+        txtMV.setLineWrap(true);
+        txtMV.setWrapStyleWord(true);
         txtMV.setColumns(20);
         txtMV.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         txtMV.setRows(5);
+        txtMV.setToolTipText("Escreva a motivação da votação");
         jScrollPane1.setViewportView(txtMV);
 
         pnConteudo.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 70, 260, -1));
@@ -129,6 +132,7 @@ public class TelaVotacao extends javax.swing.JFrame {
         pnConteudo.add(btnCad, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 250, 140, 30));
 
         txtCargo.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        txtCargo.setToolTipText("Digite o cargo da votação");
         txtCargo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtCargoActionPerformed(evt);
