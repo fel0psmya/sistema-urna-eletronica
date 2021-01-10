@@ -99,7 +99,7 @@ public class Banco {
         }
     }
     
-    /* ================== MÉTODOS DA VOTAÇÃO ================== */
+    /* ================== MÉTODOS DA URNA/VOTAÇÃO ================== */
     public String data, motivacao, cargo;
     public void pegarDados (String data, String motivacao, String cargo) {
         this.data = data;
@@ -108,30 +108,33 @@ public class Banco {
         
         new TelaUrna().show();
         TelaUrna.lblCargo.setText(cargo);
+        TelaUrna.lblData.setText(data);
+        TelaUrna.lblMV.setText(motivacao);
     }
     
     public int numE = 1;
     
     public void proximoEleitor () {
-        TelaUrna.lblFim.setVisible(true);
-        TelaUrna.pnInfo.setVisible(false);
-        TelaUrna.pnImg.setVisible(false);
-        TelaUrna.pnNumeros.setVisible(false);
-        lblNome.setVisible(false);
-        lblPartido.setVisible(false);
-        TelaUrna.lblVotoPara.setVisible(false);
-        TelaUrna.lblTituloNum.setVisible(false);
-        TelaUrna.lblTituloNome.setVisible(false);
-        TelaUrna.lblTituloPartido.setVisible(false);
+        TelaUrna.lblFim.setVisible(false);
+        TelaUrna.pnInfo.setVisible(true);
+        TelaUrna.pnImg.setVisible(true);
+        TelaUrna.lblCargo.setVisible(true);
+        TelaUrna.lblNum1.setVisible(true);
+        TelaUrna.lblNum2.setVisible(true);
+        lblNome.setVisible(true);
+        lblPartido.setVisible(true);
+        TelaUrna.lblVotoPara.setVisible(true);
+        TelaUrna.lblTituloNum.setVisible(true);
+        TelaUrna.lblTituloNome.setVisible(true);
+        TelaUrna.lblTituloPartido.setVisible(true);
         
-        TelaUrna.lblId.setText("" + (numE+1));
+        TelaUrna.lblId.setText("" + (Integer.parseInt(TelaUrna.lblId.getText())+1));
         TelaUrna.lblNum1.setText("");
         TelaUrna.lblNum2.setText("");
         TelaUrna.lblNome.setText("");
         TelaUrna.lblPartido.setText("");
-        TelaUrna.lblIcone.setText("");
+        TelaUrna.lblIcone.setIcon(null);
         TelaUrna.lblIdCand.setText("");
-
     }
     
     public ResultSet mostrarCandidato () {
@@ -144,7 +147,6 @@ public class Banco {
             rs = stmt.executeQuery("SELECT * FROM candidato WHERE numero =  "+ num +" and cargo like '"+ TelaUrna.lblCargo.getText() +"'");
             while (rs.next()) {
                 if (Integer.parseInt(rs.getString("numero")) == num && rs.getString("cargo").equals(TelaUrna.lblCargo.getText())) {
-                    System.out.println(rs.getString("cargo") + " " + rs.getString("numero"));
                     TelaUrna.lblNome.setText(rs.getString("nome"));
                     TelaUrna.lblPartido.setText(rs.getString("partido"));
                     TelaUrna.lblIdCand.setText(rs.getString("id"));
@@ -171,7 +173,7 @@ public class Banco {
         return null;
     }
     
-    public boolean verificarUltimo() {
+    public boolean verificarUltimo() { // ok
         try{
             rs = stmt.executeQuery("SELECT count(id) as total from eleitor");
             while (rs.next()) {
@@ -188,42 +190,68 @@ public class Banco {
         }
         return false;
     }
-     
+    
+    public void getNumCand() {
+        try {
+            conectar();
+            stmt = conn.createStatement();
+            rs = stmt.executeQuery("SELECT count(*) as total FROM candidato WHERE cargo like '"+ TelaUrna.lblCargo.getText() +"'");
+            while (rs.next()) {
+                TelaUrna.lblNumCand.setText("" + rs.getInt("total"));
+            }
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "ERRO: " + e, "Falha ao verificar número de candidatos", JOptionPane.ERROR_MESSAGE);
+        } finally {
+            try { if (rs != null) rs.close(); } catch (Exception e) {};
+            try { if (stmt != null) stmt.close(); } catch (Exception e) {};
+            try { if (conn != null) conn.close(); } catch (Exception e) {};
+        }
+    }
+    
     public void confirmarVoto () {
         conectar();
         try {
             stmt = conn.createStatement();
             stmt.executeUpdate("INSERT into votacao values (default, "+ Integer.parseInt(TelaUrna.lblId.getText()) +","
-            + Integer.parseInt(TelaUrna.lblIdCand.getText()) +",'"+ cargo +"','"+ motivacao +"','"+ data +"')");
+            + Integer.parseInt(TelaUrna.lblIdCand.getText()) +",'"+ TelaUrna.lblCargo.getText() +"','"+ TelaUrna.lblMV.getText() 
+            +"','"+ TelaUrna.lblData.getText() +"')");
             JOptionPane.showMessageDialog(null, "Voto confirmado! :D", "Show!", JOptionPane.INFORMATION_MESSAGE);
-            if (!verificarUltimo()) {
+            if (!verificarUltimo()) { // ERRO
                 proximoEleitor();
             } else {
-                if(conn.isClosed()) {
-                    conectar();
-                }
-                JOptionPane.showMessageDialog(null, "Votação encerrada", "Show!", JOptionPane.INFORMATION_MESSAGE);
-                rs = stmt.executeQuery("SELECT c.nome, c.id, v.id_candidato, count(c.id) as total_cand, count(v.id_voto) as total_vot FROM candidato c, votacao v WHERE c.id = v.id_candidato GROUP BY c.id ORDER BY total_vot desc");
+                conectar();                
                 try {
+                    JOptionPane.showMessageDialog(null, "Votação encerrada", "Show!", JOptionPane.INFORMATION_MESSAGE);
+                    List<String> candidatos = new ArrayList();
+                    List<String> votos_cand = new ArrayList();
+                    
+                    stmt = conn.createStatement();
+                    rs = stmt.executeQuery("SELECT c.nome, c.id, v.id_candidato, count(c.id) as total_cand, count(v.id_voto) as total_vot, v.motivo_votacao, v.data_votacao FROM candidato c, votacao v "
+                        + "WHERE c.id = v.id_candidato and v.data_votacao like '"+ TelaUrna.lblData.getText() +"' and v.motivo_votacao like '"+ TelaUrna.lblMV.getText() +"' GROUP BY c.id ORDER BY total_vot desc");
+                
+                    
                     if (rs.next()) {
-                        List<String> candidatos = new ArrayList();
-                        List<String> votos_cand = new ArrayList();
-                        
-                        int total = rs.getInt("total_cand");
-                        
-                        for (int i = 0; i < total; i++) {
+                        do {
                             candidatos.add(rs.getString("c.nome"));
                             votos_cand.add(rs.getString("total_vot"));
-                            rs.next();
-                        }
-                        
-                        rs.first();
-                        String resultado = null;
-                        for (int i = 0; i < total; i++) {
-                            resultado = i + "º lugar: " + candidatos.get(i) + " com " + votos_cand.get(i) + "votos <br>";
-                        }
-                        JOptionPane.showMessageDialog(null, "<html>"+ resultado +"<html>");
+                        } while (rs.next());
                     }
+                    
+                    int total = 0;
+                    rs = stmt.executeQuery("SELECT count(c.id) as total FROM votacao v, candidato c WHERE c.id = v.id_candidato and c.cargo like '"+ TelaUrna.lblCargo.getText() +"' and v.data_votacao like '"+ TelaUrna.lblData.getText() +"' and v.motivo_votacao like '"+ TelaUrna.lblMV.getText() +"'");
+                    if (rs.next()) {
+                        total = rs.getInt("total");
+                    }
+                    
+                    System.out.println(candidatos.get(0) + " " + total);
+                    for (int i = 0; i < total; i++) { // ERRO
+                        String resultado = "<html>"+(i+1)+"º lugar: "+candidatos.get(i)+" com "+votos_cand.get(i)+"votos <br></html>";
+                        if (i == (total-1)) {
+                            JOptionPane.showMessageDialog(null, "" + resultado);
+                            break;
+                        }
+                    }
+                    
                 } catch (SQLException e) {
                     JOptionPane.showMessageDialog(null, "ERRO: " + e, "Falha ao verificar o resultado da votação", JOptionPane.ERROR_MESSAGE);
                 }
@@ -236,4 +264,5 @@ public class Banco {
             try { if (conn != null) conn.close(); } catch (Exception e) {};
         }
     }
+    
 }

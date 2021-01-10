@@ -25,8 +25,12 @@ public class TelaUrna extends javax.swing.JFrame {
      */
     public TelaUrna() {
         initComponents();
-        pnlFim.setVisible(false);
+        lblFim.setVisible(false);
+        pnlMotivo.setVisible(false);
+        lblNumCand.setVisible(false);
         lblId.setText("" + b.numE);
+        Banco top = new Banco();
+        top.getNumCand();
     }
 
     /**
@@ -72,13 +76,8 @@ public class TelaUrna extends javax.swing.JFrame {
         pnConfirma = new javax.swing.JPanel();
         pnlConfirma = new javax.swing.JLabel();
         pnTela = new javax.swing.JPanel();
-        lblVotoPara = new javax.swing.JLabel();
-        lblNome = new javax.swing.JLabel();
-        lblTituloNome = new javax.swing.JLabel();
-        lblPartido = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         pnInfo = new javax.swing.JPanel();
-        lblTituloPartido = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         pnImg = new javax.swing.JPanel();
@@ -89,13 +88,23 @@ public class TelaUrna extends javax.swing.JFrame {
         lblId = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         pnNumeros = new javax.swing.JPanel();
+        pnlFim = new javax.swing.JPanel();
+        jPanel1 = new javax.swing.JPanel();
+        lblTituloPartido = new javax.swing.JLabel();
+        lblPartido = new javax.swing.JLabel();
+        lblNome = new javax.swing.JLabel();
+        lblTituloNome = new javax.swing.JLabel();
+        lblTituloNum = new javax.swing.JLabel();
         lblNum1 = new javax.swing.JLabel();
         lblNum2 = new javax.swing.JLabel();
-        lblTituloNum = new javax.swing.JLabel();
-        pnlFim = new javax.swing.JPanel();
-        lblFim = new javax.swing.JLabel();
         lblCargo = new javax.swing.JLabel();
+        lblVotoPara = new javax.swing.JLabel();
+        lblFim = new javax.swing.JLabel();
+        lblNumCand = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
+        lblData = new javax.swing.JLabel();
+        pnlMotivo = new javax.swing.JPanel();
+        lblMV = new javax.swing.JLabel();
         jSeparator2 = new javax.swing.JSeparator();
 
         jInternalFrame1.setVisible(true);
@@ -595,7 +604,7 @@ public class TelaUrna extends javax.swing.JFrame {
                         .addComponent(pnCorrige, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(pnConfirma, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pnlDigitosLayout.setVerticalGroup(
             pnlDigitosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -634,16 +643,6 @@ public class TelaUrna extends javax.swing.JFrame {
         pnTela.setBackground(new java.awt.Color(255, 255, 255));
         pnTela.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        lblVotoPara.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
-        lblVotoPara.setText("SEU VOTO PARA");
-
-        lblNome.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
-
-        lblTituloNome.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
-        lblTituloNome.setText("Nome:");
-
-        lblPartido.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
-
         jLabel11.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
         jLabel11.setText("Aperte a tecla:");
 
@@ -659,9 +658,6 @@ public class TelaUrna extends javax.swing.JFrame {
             pnInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 0, Short.MAX_VALUE)
         );
-
-        lblTituloPartido.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
-        lblTituloPartido.setText("Partido:");
 
         jLabel13.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
         jLabel13.setText("CONFIRMA para CONFIRMAR este voto ");
@@ -733,27 +729,50 @@ public class TelaUrna extends javax.swing.JFrame {
         pnNumeros.setBackground(new java.awt.Color(255, 255, 255));
         pnNumeros.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        pnlFim.setBackground(new java.awt.Color(255, 255, 255));
+        pnlFim.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        lblTituloPartido.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
+        lblTituloPartido.setText("Partido:");
+        jPanel1.add(lblTituloPartido, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 220, -1, -1));
+
+        lblPartido.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
+        jPanel1.add(lblPartido, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 220, 320, 24));
+
+        lblNome.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
+        jPanel1.add(lblNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 170, 320, 24));
+
+        lblTituloNome.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
+        lblTituloNome.setText("Nome:");
+        jPanel1.add(lblTituloNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 170, -1, -1));
+
+        lblTituloNum.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
+        lblTituloNum.setText("Número:");
+        jPanel1.add(lblTituloNum, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, -1, 41));
+
         lblNum1.setFont(new java.awt.Font("Arial", 0, 26)); // NOI18N
         lblNum1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblNum1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        pnNumeros.add(lblNum1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 31, 41));
+        jPanel1.add(lblNum1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 100, 31, 41));
 
         lblNum2.setFont(new java.awt.Font("Arial", 0, 26)); // NOI18N
         lblNum2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblNum2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        pnNumeros.add(lblNum2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 0, 31, 41));
+        jPanel1.add(lblNum2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 100, 31, 41));
 
-        lblTituloNum.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
-        lblTituloNum.setText("Número:");
+        lblCargo.setFont(new java.awt.Font("Arial", 0, 22)); // NOI18N
+        jPanel1.add(lblCargo, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 40, 140, 26));
 
-        pnlFim.setBackground(new java.awt.Color(255, 255, 255));
-        pnlFim.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        lblVotoPara.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
+        lblVotoPara.setText("SEU VOTO PARA");
+        jPanel1.add(lblVotoPara, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         lblFim.setFont(new java.awt.Font("Arial", 0, 48)); // NOI18N
         lblFim.setText("FIM");
-        pnlFim.add(lblFim, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
-
-        lblCargo.setFont(new java.awt.Font("Arial", 0, 22)); // NOI18N
+        jPanel1.add(lblFim, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 100, -1, -1));
 
         javax.swing.GroupLayout pnTelaLayout = new javax.swing.GroupLayout(pnTela);
         pnTela.setLayout(pnTelaLayout);
@@ -761,90 +780,62 @@ public class TelaUrna extends javax.swing.JFrame {
             pnTelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(pnInfo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(pnTelaLayout.createSequentialGroup()
-                .addGroup(pnTelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pnTelaLayout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(lblVotoPara)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(pnTelaLayout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(lblCargo, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(154, 154, 154))
-                    .addGroup(pnTelaLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(pnTelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(pnTelaLayout.createSequentialGroup()
-                                .addComponent(lblTituloNum)
-                                .addGap(18, 18, 18)
-                                .addComponent(pnNumeros, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(pnTelaLayout.createSequentialGroup()
-                                .addGroup(pnTelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lblTituloNome)
-                                    .addComponent(lblTituloPartido))
-                                .addGap(23, 23, 23)
-                                .addGroup(pnTelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lblNome, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(lblPartido, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGap(40, 40, 40)))
-                        .addComponent(pnlFim, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(34, 34, 34)))
-                .addComponent(pnImg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(pnTelaLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(pnTelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnTelaLayout.createSequentialGroup()
-                        .addComponent(jLabel11)
-                        .addGap(539, 539, 539))
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 417, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(pnNumeros, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(pnlFim, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(34, 34, 34)
+                        .addComponent(pnImg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(pnTelaLayout.createSequentialGroup()
-                        .addGap(10, 10, 10)
                         .addGroup(pnTelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(pnTelaLayout.createSequentialGroup()
-                                .addGap(10, 10, 10)
+                                .addGap(20, 20, 20)
                                 .addComponent(jLabel14))
-                            .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addGroup(pnTelaLayout.createSequentialGroup()
+                                .addGap(10, 10, 10)
+                                .addComponent(jLabel13)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel15)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(lblId, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())))
+                        .addContainerGap())
+                    .addGroup(pnTelaLayout.createSequentialGroup()
+                        .addComponent(jLabel11)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(lblNumCand, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(203, 203, 203))))
         );
         pnTelaLayout.setVerticalGroup(
             pnTelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnTelaLayout.createSequentialGroup()
                 .addGroup(pnTelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnTelaLayout.createSequentialGroup()
-                        .addComponent(pnImg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(pnTelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(pnTelaLayout.createSequentialGroup()
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(pnlFim, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(102, 102, 102))
+                            .addGroup(pnTelaLayout.createSequentialGroup()
+                                .addGap(112, 112, 112)
+                                .addComponent(pnNumeros, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addComponent(pnImg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
                     .addGroup(pnTelaLayout.createSequentialGroup()
-                        .addGap(11, 11, 11)
-                        .addComponent(lblVotoPara)
-                        .addGap(19, 19, 19)
-                        .addComponent(lblCargo, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(pnTelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnTelaLayout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(pnlFim, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(86, 86, 86))
-                            .addGroup(pnTelaLayout.createSequentialGroup()
-                                .addGap(32, 32, 32)
-                                .addGroup(pnTelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(pnTelaLayout.createSequentialGroup()
-                                        .addComponent(pnNumeros, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(lblNome, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(pnTelaLayout.createSequentialGroup()
-                                        .addComponent(lblTituloNum, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(lblTituloNome)))
-                                .addGap(18, 18, 18)
-                                .addGroup(pnTelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(lblPartido, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(lblTituloPartido, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                        .addContainerGap()
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addComponent(pnInfo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel11)
+                .addGroup(pnTelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel11)
+                    .addGroup(pnTelaLayout.createSequentialGroup()
+                        .addComponent(lblNumCand, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(1, 1, 1)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(pnTelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnTelaLayout.createSequentialGroup()
@@ -859,6 +850,19 @@ public class TelaUrna extends javax.swing.JFrame {
 
         jPanel2.add(pnTela, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, 660, 400));
         jPanel2.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 530, 1010, 10));
+
+        lblData.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        lblData.setForeground(new java.awt.Color(102, 102, 102));
+        jPanel2.add(lblData, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 500, 370, 30));
+
+        pnlMotivo.setBackground(new java.awt.Color(211, 211, 211));
+        pnlMotivo.setToolTipText(";)");
+        pnlMotivo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        lblMV.setFont(new java.awt.Font("Tahoma", 0, 1)); // NOI18N
+        pnlMotivo.add(lblMV, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 40, 20));
+
+        jPanel2.add(pnlMotivo, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 490, 150, 30));
         jPanel2.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, 1010, 540));
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1100, 560));
@@ -1062,10 +1066,12 @@ public class TelaUrna extends javax.swing.JFrame {
         lblFim.setVisible(true);
         pnInfo.setVisible(false);
         pnImg.setVisible(false);
-        pnNumeros.setVisible(false);
+        lblNum1.setVisible(false);
+        lblNum2.setVisible(false);
         lblNome.setVisible(false);
         lblPartido.setVisible(false);
         lblVotoPara.setVisible(false);
+        lblCargo.setVisible(false);
         lblTituloNum.setVisible(false);
         lblTituloNome.setVisible(false);
         lblTituloPartido.setVisible(false);
@@ -1161,17 +1167,21 @@ public class TelaUrna extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel30;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     public static javax.swing.JLabel lblCargo;
+    public static javax.swing.JLabel lblData;
     public static javax.swing.JLabel lblFim;
     public static javax.swing.JLabel lblIcone;
     public static javax.swing.JLabel lblId;
     public static javax.swing.JLabel lblIdCand;
+    public static javax.swing.JLabel lblMV;
     public static javax.swing.JLabel lblNome;
     public static javax.swing.JLabel lblNum1;
     public static javax.swing.JLabel lblNum2;
+    public static javax.swing.JLabel lblNumCand;
     public static javax.swing.JLabel lblPartido;
     public static javax.swing.JLabel lblTituloNome;
     public static javax.swing.JLabel lblTituloNum;
@@ -1211,5 +1221,6 @@ public class TelaUrna extends javax.swing.JFrame {
     private javax.swing.JPanel pnlDigitos;
     private javax.swing.JPanel pnlFim;
     private javax.swing.JPanel pnlJustica;
+    private javax.swing.JPanel pnlMotivo;
     // End of variables declaration//GEN-END:variables
 }
