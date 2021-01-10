@@ -1,0 +1,1 @@
+Talvez seja necessário zipar o arquivo do banco para importá-lo para um SGBD.
