@@ -238,16 +238,16 @@ public class Banco {
                     }
                     
                     int total = 0;
-                    rs = stmt.executeQuery("SELECT count(c.id) as total FROM votacao v, candidato c WHERE c.id = v.id_candidato and c.cargo like '"+ TelaUrna.lblCargo.getText() +"' and v.data_votacao like '"+ TelaUrna.lblData.getText() +"' and v.motivo_votacao like '"+ TelaUrna.lblMV.getText() +"'");
+                    rs = stmt.executeQuery("SELECT count(DISTINCT c.id) as total FROM votacao v, candidato c WHERE c.id = v.id_candidato and c.cargo like '"+ TelaUrna.lblCargo.getText() +"' and v.data_votacao like '"+ TelaUrna.lblData.getText() +"' and v.motivo_votacao like '"+ TelaUrna.lblMV.getText() +"'");
                     if (rs.next()) {
                         total = rs.getInt("total");
                     }
                     
-                    System.out.println(candidatos.get(0) + " " + total);
+                    String resultado = "";
                     for (int i = 0; i < total; i++) { // ERRO
-                        String resultado = "<html>"+(i+1)+"º lugar: "+candidatos.get(i)+" com "+votos_cand.get(i)+"votos <br></html>";
+                        resultado = resultado + (i+1)+"º lugar: <b>"+candidatos.get(i)+"</b> com <b>"+votos_cand.get(i)+"</b> votos <br>";
                         if (i == (total-1)) {
-                            JOptionPane.showMessageDialog(null, "" + resultado);
+                            JOptionPane.showMessageDialog(null, "<html>" + resultado +" <br><br> <h3>Parabéns, "+candidatos.get(0)+"!</html>", "E o ganhador é...", JOptionPane.PLAIN_MESSAGE);
                             break;
                         }
                     }

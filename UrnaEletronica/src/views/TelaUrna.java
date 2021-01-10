@@ -106,6 +106,13 @@ public class TelaUrna extends javax.swing.JFrame {
         pnlMotivo = new javax.swing.JPanel();
         lblMV = new javax.swing.JLabel();
         jSeparator2 = new javax.swing.JSeparator();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        menuV = new javax.swing.JMenu();
+        itemNV = new javax.swing.JMenuItem();
+        menuC = new javax.swing.JMenu();
+        itemCand = new javax.swing.JMenuItem();
+        menuE = new javax.swing.JMenu();
+        itemE = new javax.swing.JMenuItem();
 
         jInternalFrame1.setVisible(true);
 
@@ -715,7 +722,7 @@ public class TelaUrna extends javax.swing.JFrame {
                 .addGroup(pnImgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel16)
                     .addComponent(lblIdCand, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(16, Short.MAX_VALUE))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
         lblId.setFont(new java.awt.Font("Arial", 0, 26)); // NOI18N
@@ -836,7 +843,6 @@ public class TelaUrna extends javax.swing.JFrame {
                     .addGroup(pnTelaLayout.createSequentialGroup()
                         .addComponent(lblNumCand, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(1, 1, 1)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(pnTelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnTelaLayout.createSequentialGroup()
                         .addComponent(jLabel13)
@@ -863,9 +869,57 @@ public class TelaUrna extends javax.swing.JFrame {
         pnlMotivo.add(lblMV, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 40, 20));
 
         jPanel2.add(pnlMotivo, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 490, 150, 30));
-        jPanel2.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, 1010, 540));
+        jPanel2.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, 1010, 550));
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1100, 560));
+
+        jMenuBar1.setBackground(new java.awt.Color(0, 0, 0));
+
+        menuV.setText("Votação");
+
+        itemNV.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_V, java.awt.event.InputEvent.ALT_MASK));
+        itemNV.setText("Nova votação");
+        itemNV.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                itemNVMouseClicked(evt);
+            }
+        });
+        itemNV.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itemNVActionPerformed(evt);
+            }
+        });
+        menuV.add(itemNV);
+
+        jMenuBar1.add(menuV);
+
+        menuC.setText("Candidato");
+
+        itemCand.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.ALT_MASK));
+        itemCand.setText("Novo candidato");
+        itemCand.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itemCandActionPerformed(evt);
+            }
+        });
+        menuC.add(itemCand);
+
+        jMenuBar1.add(menuC);
+
+        menuE.setText("Eleitor");
+
+        itemE.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.ALT_MASK));
+        itemE.setText("Novo eleitor");
+        itemE.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itemEActionPerformed(evt);
+            }
+        });
+        menuE.add(itemE);
+
+        jMenuBar1.add(menuE);
+
+        setJMenuBar(jMenuBar1);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -1122,6 +1176,23 @@ public class TelaUrna extends javax.swing.JFrame {
     private void pnl2MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnl2MouseReleased
     }//GEN-LAST:event_pnl2MouseReleased
 
+    private void itemCandActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemCandActionPerformed
+        new TelaCandidato().show();
+    }//GEN-LAST:event_itemCandActionPerformed
+
+    private void itemEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemEActionPerformed
+        new TelaEleitor().show();
+    }//GEN-LAST:event_itemEActionPerformed
+
+    private void itemNVMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_itemNVMouseClicked
+        // NADA
+    }//GEN-LAST:event_itemNVMouseClicked
+
+    private void itemNVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemNVActionPerformed
+        new TelaVotacao().show();
+        dispose();
+    }//GEN-LAST:event_itemNVActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1158,6 +1229,9 @@ public class TelaUrna extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem itemCand;
+    private javax.swing.JMenuItem itemE;
+    private javax.swing.JMenuItem itemNV;
     private javax.swing.JInternalFrame jInternalFrame1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel13;
@@ -1167,6 +1241,7 @@ public class TelaUrna extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel30;
+    private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JSeparator jSeparator1;
@@ -1187,6 +1262,9 @@ public class TelaUrna extends javax.swing.JFrame {
     public static javax.swing.JLabel lblTituloNum;
     public static javax.swing.JLabel lblTituloPartido;
     public static javax.swing.JLabel lblVotoPara;
+    private javax.swing.JMenu menuC;
+    private javax.swing.JMenu menuE;
+    private javax.swing.JMenu menuV;
     private javax.swing.JPanel pn0;
     private javax.swing.JPanel pn1;
     private javax.swing.JPanel pn2;

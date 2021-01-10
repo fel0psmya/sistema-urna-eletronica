@@ -45,7 +45,6 @@ public class TelaInicial extends javax.swing.JFrame {
         itemNV = new javax.swing.JMenuItem();
         menuC = new javax.swing.JMenu();
         itemCand = new javax.swing.JMenuItem();
-        itemCarg = new javax.swing.JMenuItem();
         menuE = new javax.swing.JMenu();
         itemE = new javax.swing.JMenuItem();
 
@@ -180,7 +179,7 @@ public class TelaInicial extends javax.swing.JFrame {
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(323, 0, 430, 460));
 
-        menuV.setText("Novo");
+        menuV.setText("Votação");
 
         itemNV.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_V, java.awt.event.InputEvent.ALT_MASK));
         itemNV.setText("Nova votação");
@@ -208,15 +207,6 @@ public class TelaInicial extends javax.swing.JFrame {
             }
         });
         menuC.add(itemCand);
-
-        itemCarg.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.ALT_MASK | java.awt.event.InputEvent.SHIFT_MASK));
-        itemCarg.setText("Novo cargo");
-        itemCarg.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                itemCargActionPerformed(evt);
-            }
-        });
-        menuC.add(itemCarg);
 
         menu.add(menuC);
 
@@ -292,10 +282,6 @@ public class TelaInicial extends javax.swing.JFrame {
         new TelaCandidato().show();
     }//GEN-LAST:event_pCMouseClicked
 
-    private void itemCargActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemCargActionPerformed
-
-    }//GEN-LAST:event_itemCargActionPerformed
-
     private void pEleitorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pEleitorMouseClicked
         new TelaEleitor().show();
     }//GEN-LAST:event_pEleitorMouseClicked
@@ -337,7 +323,6 @@ public class TelaInicial extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem itemCand;
-    private javax.swing.JMenuItem itemCarg;
     private javax.swing.JMenuItem itemE;
     private javax.swing.JMenuItem itemNV;
     private javax.swing.JLabel jLabel1;

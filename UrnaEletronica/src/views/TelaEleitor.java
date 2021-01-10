@@ -40,6 +40,11 @@ public class TelaEleitor extends javax.swing.JFrame {
         btnCad = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         txtData = new javax.swing.JFormattedTextField();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        menuV = new javax.swing.JMenu();
+        itemNV = new javax.swing.JMenuItem();
+        menuC = new javax.swing.JMenu();
+        itemCand = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Cadastro de Eleitor");
@@ -81,25 +86,25 @@ public class TelaEleitor extends javax.swing.JFrame {
 
         jLabel3.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         jLabel3.setText("Nome");
-        jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 65, -1, -1));
+        jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, -1, -1));
 
         txtNome.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         txtNome.setToolTipText("Digite seu nome");
         txtNome.setPreferredSize(null);
-        jPanel3.add(txtNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 64, 330, -1));
+        jPanel3.add(txtNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 50, 330, -1));
 
         jLabel4.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         jLabel4.setText("CPF");
-        jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 104, -1, 20));
+        jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, -1, 20));
 
         txtCPF.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         txtCPF.setToolTipText("Digite apenas números");
         txtCPF.setPreferredSize(null);
-        jPanel3.add(txtCPF, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 104, 330, -1));
+        jPanel3.add(txtCPF, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 90, 330, -1));
 
         jLabel5.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         jLabel5.setText("<html>Data de <br/>nascimento</html>");
-        jPanel3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, 120, 40));
+        jPanel3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 120, 40));
 
         btnCad.setBackground(new java.awt.Color(0, 153, 102));
         btnCad.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
@@ -111,7 +116,7 @@ public class TelaEleitor extends javax.swing.JFrame {
                 btnCadActionPerformed(evt);
             }
         });
-        jPanel3.add(btnCad, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 200, 120, 30));
+        jPanel3.add(btnCad, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 190, 120, 30));
         jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(203, 246, 47, 14));
 
         try {
@@ -126,9 +131,44 @@ public class TelaEleitor extends javax.swing.JFrame {
                 txtDataActionPerformed(evt);
             }
         });
-        jPanel3.add(txtData, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 150, 160, -1));
+        jPanel3.add(txtData, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 140, 160, -1));
 
         getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 460, 260));
+
+        jMenuBar1.setBackground(new java.awt.Color(0, 0, 0));
+
+        menuV.setText("Votação");
+
+        itemNV.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_V, java.awt.event.InputEvent.ALT_MASK));
+        itemNV.setText("Nova votação");
+        itemNV.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                itemNVMouseClicked(evt);
+            }
+        });
+        itemNV.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itemNVActionPerformed(evt);
+            }
+        });
+        menuV.add(itemNV);
+
+        jMenuBar1.add(menuV);
+
+        menuC.setText("Candidato");
+
+        itemCand.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.ALT_MASK));
+        itemCand.setText("Novo candidato");
+        itemCand.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itemCandActionPerformed(evt);
+            }
+        });
+        menuC.add(itemCand);
+
+        jMenuBar1.add(menuC);
+
+        setJMenuBar(jMenuBar1);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -140,6 +180,19 @@ public class TelaEleitor extends javax.swing.JFrame {
     private void txtDataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDataActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtDataActionPerformed
+
+    private void itemNVMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_itemNVMouseClicked
+        // NADA
+    }//GEN-LAST:event_itemNVMouseClicked
+
+    private void itemNVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemNVActionPerformed
+        new TelaVotacao().show();
+        dispose();
+    }//GEN-LAST:event_itemNVActionPerformed
+
+    private void itemCandActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemCandActionPerformed
+        new TelaCandidato().show();
+    }//GEN-LAST:event_itemCandActionPerformed
 
     /**
      * @param args the command line arguments
@@ -178,13 +231,18 @@ public class TelaEleitor extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCad;
+    private javax.swing.JMenuItem itemCand;
+    private javax.swing.JMenuItem itemNV;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JMenu menuC;
+    private javax.swing.JMenu menuV;
     private javax.swing.JTextField txtCPF;
     private javax.swing.JFormattedTextField txtData;
     private javax.swing.JTextField txtNome;

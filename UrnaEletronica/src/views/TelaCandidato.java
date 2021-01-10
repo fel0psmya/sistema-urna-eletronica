@@ -52,6 +52,11 @@ public class TelaCandidato extends javax.swing.JFrame {
         btnCad = new javax.swing.JButton();
         txtCargo = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
+        menu = new javax.swing.JMenuBar();
+        menuV = new javax.swing.JMenu();
+        itemNV = new javax.swing.JMenuItem();
+        menuE = new javax.swing.JMenu();
+        itemE = new javax.swing.JMenuItem();
 
         jList1.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -64,6 +69,7 @@ public class TelaCandidato extends javax.swing.JFrame {
         setTitle("Cadastro de Candidato");
         setBackground(new java.awt.Color(255, 255, 255));
         setMinimumSize(new java.awt.Dimension(450, 500));
+        setPreferredSize(new java.awt.Dimension(450, 535));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -166,6 +172,39 @@ public class TelaCandidato extends javax.swing.JFrame {
 
         getContentPane().add(pnBaixo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 230, 450, 380));
 
+        menuV.setText("Votação");
+
+        itemNV.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_V, java.awt.event.InputEvent.ALT_MASK));
+        itemNV.setText("Nova votação");
+        itemNV.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                itemNVMouseClicked(evt);
+            }
+        });
+        itemNV.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itemNVActionPerformed(evt);
+            }
+        });
+        menuV.add(itemNV);
+
+        menu.add(menuV);
+
+        menuE.setText("Eleitor");
+
+        itemE.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.ALT_MASK));
+        itemE.setText("Novo eleitor");
+        itemE.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itemEActionPerformed(evt);
+            }
+        });
+        menuE.add(itemE);
+
+        menu.add(menuE);
+
+        setJMenuBar(menu);
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -194,6 +233,18 @@ public class TelaCandidato extends javax.swing.JFrame {
             // Envia os valores para o controlador
             
     }//GEN-LAST:event_btnCadActionPerformed
+
+    private void itemNVMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_itemNVMouseClicked
+        // NADA
+    }//GEN-LAST:event_itemNVMouseClicked
+
+    private void itemNVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemNVActionPerformed
+        new TelaVotacao().show();
+    }//GEN-LAST:event_itemNVActionPerformed
+
+    private void itemEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemEActionPerformed
+        new TelaEleitor().show();
+    }//GEN-LAST:event_itemEActionPerformed
 
     /**
      * @param args the command line arguments
@@ -232,6 +283,8 @@ public class TelaCandidato extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCad;
+    private javax.swing.JMenuItem itemE;
+    private javax.swing.JMenuItem itemNV;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -240,6 +293,9 @@ public class TelaCandidato extends javax.swing.JFrame {
     private javax.swing.JList<String> jList1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblIcone;
+    private javax.swing.JMenuBar menu;
+    private javax.swing.JMenu menuE;
+    private javax.swing.JMenu menuV;
     private javax.swing.JPanel pnBaixo;
     private javax.swing.JPanel pnCima;
     private javax.swing.JPanel pnFoto;
